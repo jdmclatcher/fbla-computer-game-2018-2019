@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Wall
+  - Test Box
+  - UI
+  - Signs
+  - Acronyms/FLC
+  - Acronyms/SLC
+  - Acronyms/FBLA
+  - Acronyms/NLC
+  - Acronyms/EMERGE
+  - Acronyms/ML
+  - Acronyms/PD
+  - Obstacle Destroyer
+  - Background Destroyer
+  - Obstacle
+  - Obstacle Trigger
+  - MiniGame/1
+  - MiniGame/2
+  - MiniGame/3
+  - MiniGame/4
+  - MiniGame/5
+  - MiniGame/6
+  - MiniGame/7
+  - MiniGame/8
+  - MiniGame/9
+  - MiniGame/10
+  - MiniGame/11
+  - MiniGame/12
+  - Wall/1
+  - Good Box
+  - Bad Box
+  - Wall/2
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
