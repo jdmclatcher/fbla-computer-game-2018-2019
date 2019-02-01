@@ -11,6 +11,9 @@ public class MiniGame6UI : MonoBehaviour {
      * match the term (boxes) with the definition (slots)
      * based on how fast you can get all the boxes in the slots correctly, no penalty for wrong answers,
      * besides the fact that it slows you down
+     * 
+     * 
+     * TODO delete me!
     */ 
 
     #region Countdown
