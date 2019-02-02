@@ -103,6 +103,7 @@ public class MiniGame4UI : MonoBehaviour {
     [SerializeField] private GameObject bRoll;
     [SerializeField] private int panDuration;
     [SerializeField] private float secondsToWait;
+    [SerializeField] private Button[] buttons;
 
     private bool correct;
     private bool hasAnswered = false;
@@ -129,6 +130,10 @@ public class MiniGame4UI : MonoBehaviour {
 
     IEnumerator IWaitVictory()
     {
+        foreach (Button button in buttons)
+        {
+            button.interactable = false; // disbale being able to click on each button
+        }
         yield return new WaitForSeconds(secondsToWait);
 
         correct = true;
@@ -137,6 +142,11 @@ public class MiniGame4UI : MonoBehaviour {
 
     IEnumerator IWaitDefeat()
     {
+        buttons[0].GetComponent<Image>().color = Color.green; // show the right answer even after defeat
+        foreach (Button button in buttons)
+        {
+            button.interactable = false; // disbale being able to click on each button
+        }
         yield return new WaitForSeconds(secondsToWait);
 
         correct = false;

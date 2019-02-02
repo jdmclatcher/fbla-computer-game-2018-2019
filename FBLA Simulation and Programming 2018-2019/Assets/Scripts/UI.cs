@@ -13,12 +13,16 @@ public class UI : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI supportersText;
     public int supportersToFinish1;
     public int supportersToFinish2;
-    public int supportersToFinish3;
 
+    [SerializeField] private GameObject wall1;
+    [SerializeField] private GameObject wall2;
 
     #region Start and Update
     private void Start()
     {
+        // enable both walls
+        wall1.SetActive(true);
+        wall2.SetActive(true);
         // enable world canvas
         mainWorldCanvas.gameObject.SetActive(true);
         miniGameUI.SetActive(false);
@@ -141,6 +145,21 @@ public class UI : MonoBehaviour {
 
         // every time UI loads, will update supporters text value
         supportersText.text = PlayerPrefs.GetInt("Supporters").ToString();
+    }
+
+    #endregion
+
+    #region Game End/Victory
+   
+    // "open the gates"
+    public void OpenTheGate1()
+    {
+        wall1.SetActive(false);
+    }
+
+    public void OpenTheGate2()
+    {
+        wall2.SetActive(false);
     }
 
     #endregion

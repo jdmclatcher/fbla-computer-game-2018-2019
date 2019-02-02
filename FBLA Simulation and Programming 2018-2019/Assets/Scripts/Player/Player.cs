@@ -170,22 +170,27 @@ public class Player : MonoBehaviour {
                 Validate(8);
                 break;
             // wall checks
-            case "Wall 1":
+            case "Wall/1":
                 // if player has correct amount of supporters, they can pass through
                 if (PlayerPrefs.GetInt("Supporters") >= ui.supportersToFinish1)
                 {
+                    // TODO open the gate!
                     Debug.Log("Congrats! You can move on now.");
+                    ui.OpenTheGate1(); // go to next level
                 } else
                 {
-                    Debug.Log("You need to get more supporters.");
+                    // TODO give a helpful message of rejection
+                    Debug.Log("You need to gather more supporters.");
                 }
                 break;
-            case "Wall 2":
+            case "Wall/2":
                 // WIN THE GAME
                 // if player has correct amount of supporters, they can pass through
                 if (PlayerPrefs.GetInt("Supporters") >= ui.supportersToFinish2)
                 {
+                    // TODO win the game
                     Debug.Log("Congrats! You have completed the game!");
+                    ui.OpenTheGate2(); // (win the game)
                 }
                 else
                 {
@@ -196,7 +201,6 @@ public class Player : MonoBehaviour {
             default:
                 break;
         }
-
         
     }
     
@@ -344,10 +348,10 @@ public class Player : MonoBehaviour {
     private void ResetPrefs()
     {
         // PlayerPrefs.SetInt("Rep Points", 0);
-        PlayerPrefs.SetInt("Supporters", 0);
-        PlayerPrefs.SetFloat("xLOC", startPosition.position.x);
-        PlayerPrefs.SetFloat("yLOC", startPosition.position.y);
-        PlayerPrefs.SetFloat("zLOC", startPosition.position.z);
+        // PlayerPrefs.SetInt("Supporters", 0);
+        //PlayerPrefs.SetFloat("xLOC", startPosition.position.x);
+        //PlayerPrefs.SetFloat("yLOC", startPosition.position.y);
+        //PlayerPrefs.SetFloat("zLOC", startPosition.position.z);
         PlayerPrefs.SetInt("First Time", 0);
     }
 

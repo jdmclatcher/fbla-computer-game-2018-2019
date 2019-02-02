@@ -42,11 +42,6 @@ public class MiniGame8UI : MonoBehaviour {
         // start countdown at beginning
         StartCoroutine(ICountdown());
     }
-
-    private void Update()
-    {
-
-    }
     #endregion
 
     #region Gameplay
@@ -70,6 +65,7 @@ public class MiniGame8UI : MonoBehaviour {
 
     public void CheckAnswers(Button button)
     {
+        
         button.interactable = false; // disbale button so they cant spam it
         // called from button, evaluates each answer
         int correctCountTEMP = 0; // reset temp correct count 
@@ -85,11 +81,13 @@ public class MiniGame8UI : MonoBehaviour {
             // (.value is base 0)
             if (dropdowns[x].value == correctVal)
             {
+                // dropdowns[x].captionText.color = Color.black; // reset to original color
                 Debug.Log("Thats Correct!");
                 correctCountTEMP++; // if this number reaches the number of dropdowns, end the game
             }
             else
             {
+                dropdowns[x].captionText.color = Color.red; // turn the text of the response to red
                 numberIncorrect++; // increase count of questions missed
                 Debug.Log("Incorrect.");
             }
@@ -109,9 +107,14 @@ public class MiniGame8UI : MonoBehaviour {
     }
 
     // re-enable the button
-    public void OnChange(Button button)
+    public void OnDropdownChange(Button button)
     {
         button.interactable = true;
+    }
+
+    public void OnDropdownChange2(Dropdown dropdown)
+    {
+        dropdown.captionText.color = Color.black; // reset color
     }
 
     // remove points from rep points
@@ -127,6 +130,7 @@ public class MiniGame8UI : MonoBehaviour {
         numberMissedText.text = numberIncorrect.ToString();
         repPointText.text = repPoints.ToString();
         gameEndScreen.SetActive(true); // set the end screen active
+        PlayerPrefs.SetInt("Rep Points", PlayerPrefs.GetInt("Rep Points") + repPoints); // add to rep points
     }
 
     public void ExitAndReturn()
