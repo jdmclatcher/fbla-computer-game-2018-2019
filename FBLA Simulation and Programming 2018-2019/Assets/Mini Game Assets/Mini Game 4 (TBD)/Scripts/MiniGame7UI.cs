@@ -5,7 +5,7 @@ using TMPro;
 public class MiniGame7UI : MonoBehaviour {
 
     /*
-     * TODO make hard mini game
+     * TODO make easy mini game
      * 
      *
     */

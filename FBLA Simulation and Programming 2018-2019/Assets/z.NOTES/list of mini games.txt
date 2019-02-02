@@ -2,13 +2,13 @@ STAGE 1
 
 1 - prof dresser
 2 - ALL or NOTHING
-3 - box matcher
+3 - 
 4 - 
 
 STAGE 2
 
 5 - dropper game
-6 - 
+6 - box matcher
 7 - acronym attack
 8 - running for office
 
