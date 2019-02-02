@@ -19,13 +19,13 @@ public class UI : MonoBehaviour {
     #region Start and Update
     private void Start()
     {
-        
+        // enable world canvas
+        mainWorldCanvas.gameObject.SetActive(true);
         miniGameUI.SetActive(false);
         // use PlayerPrefs to get the value of the rep points
         // every time the scene is loaded
         repPoints = PlayerPrefs.GetInt("Rep Points");
         repPointsText.text = repPoints.ToString();
-
 
         SetSliderBounds();
         
@@ -51,11 +51,25 @@ public class UI : MonoBehaviour {
     public bool freeToMove = false;
     [HideInInspector] public int gameNumber;
 
+    [Header("Mini Game Main Stats")]
+    [SerializeField] private TextMeshProUGUI repPointsMainText;
+    [SerializeField] private TextMeshProUGUI supportersMainText;
+
+    [SerializeField] private Canvas mainWorldCanvas;
+
     public void ShowMiniGameUI()
     { 
         Cursor.visible = true; // show the cursor
+        // disable world canvas
+        mainWorldCanvas.gameObject.SetActive(false);
+        // update text fields
+        repPointsMainText.text = repPoints.ToString();
+        supportersMainText.text = PlayerPrefs.GetInt("Supporters").ToString();
+        
         miniGameUI.SetActive(true);
         
+
+
         // for loop that runs throught the length of mini-games, starting at 1
         for (int i = 1; i <= miniGames.Count; i++)
         {
@@ -80,6 +94,8 @@ public class UI : MonoBehaviour {
     // when the player presses the QUIT option
     public void QuitMiniGameUI()
     {
+        // enable world canvas again
+        mainWorldCanvas.gameObject.SetActive(true);
         Debug.Log(gameNumber);
         Cursor.visible = false; // hide the cursor again
         // disable popup UI by finding the gameObject by name

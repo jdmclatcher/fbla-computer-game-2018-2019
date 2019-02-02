@@ -15,7 +15,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Mini Games/1.First Level/MiniGame2.unity
     guid: 7cb9e795cfa154f4896d08b66b196360
   - enabled: 1
+    path: Assets/Scenes/Mini Games/1.First Level/MiniGame3.unity
+    guid: 3980980a25152ee49ae12b3e7297a596
+  - enabled: 1
+    path: Assets/Scenes/Mini Games/1.First Level/MiniGame4.unity
+    guid: 9346b0524f6817044ad82459d1103722
+  - enabled: 1
     path: Assets/Scenes/Mini Games/2.Second Level/MiniGame5.unity
+    guid: 5689ba63858384a48bd234f322655342
+  - enabled: 1
+    path: Assets/Scenes/Mini Games/2.Second Level/MiniGame6.unity
     guid: 582d564de04d48642b05dd6eb052a47d
   - enabled: 1
     path: Assets/Scenes/Mini Games/2.Second Level/MiniGame7.unity
