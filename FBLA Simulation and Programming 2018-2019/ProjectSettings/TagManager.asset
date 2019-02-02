@@ -35,6 +35,10 @@ TagManager:
   - Good Box
   - Bad Box
   - Wall/2
+  - Box/1
+  - Box/2
+  - Box/3
+  - Box/4
   layers:
   - Default
   - TransparentFX
