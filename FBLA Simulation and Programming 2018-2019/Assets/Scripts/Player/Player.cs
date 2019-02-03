@@ -347,11 +347,11 @@ public class Player : MonoBehaviour {
     // reset playerprefs rep points value
     private void ResetPrefs()
     {
-        // PlayerPrefs.SetInt("Rep Points", 0);
-        // PlayerPrefs.SetInt("Supporters", 0);
-        //PlayerPrefs.SetFloat("xLOC", startPosition.position.x);
-        //PlayerPrefs.SetFloat("yLOC", startPosition.position.y);
-        //PlayerPrefs.SetFloat("zLOC", startPosition.position.z);
+        PlayerPrefs.SetInt("Rep Points", 0);
+        PlayerPrefs.SetInt("Supporters", 0);
+        PlayerPrefs.SetFloat("xLOC", startPosition.position.x);
+        PlayerPrefs.SetFloat("yLOC", startPosition.position.y);
+        PlayerPrefs.SetFloat("zLOC", startPosition.position.z);
         PlayerPrefs.SetInt("First Time", 0);
     }
 
