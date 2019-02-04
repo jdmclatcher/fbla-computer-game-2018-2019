@@ -47,6 +47,9 @@ public class UI : MonoBehaviour {
     // sub UIs - Array List
     [SerializeField] private List<GameObject> miniGames;
 
+    // important object that will load scene after animation is played
+    [SerializeField] private OpenSceneAfterTime curtainController;
+
     [Header("Player Stats")]
     // main UI to display rep points
     [SerializeField] private TextMeshProUGUI repPointsText;
@@ -90,9 +93,10 @@ public class UI : MonoBehaviour {
     // loads RANDOM mini-game scene
     public void TransitionMiniGameScenes()
     {
+        // load specified scene
+        curtainController.SetStuff(miniGameScene + gameNumber.ToString());
+        // StartCoroutine(curtainController.IOpen(miniGameScene + gameNumber.ToString())); 
         Debug.Log(gameNumber);
-        // converts that int to string to be the suffix for the mini-game
-        SceneManager.LoadScene(miniGameScene + gameNumber.ToString());
     }
 
     // when the player presses the QUIT option

@@ -355,6 +355,7 @@ MonoBehaviour:
   timeInterval: 2.5
   xSpawnDif: 2
   spawnPosCONST: {fileID: 422819148}
+  ui: {fileID: 2118961850}
 --- !u!1 &217581144
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,6 +876,7 @@ MonoBehaviour:
   moveSpeed: 3.5
   xMark: {fileID: 1749387795534416, guid: 103cb380c494df04ba83638c7a6bba08, type: 2}
   checkMark: {fileID: 1111801838127648, guid: 2763aa8c3446d1b4ca17e4dbdcddf47d, type: 2}
+  ui: {fileID: 2118961850}
 --- !u!65 &713914941
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2246,6 +2248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f8edb4156244e448f78d796e0f6042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ui: {fileID: 2118961850}
   xMark: {fileID: 1749387795534416, guid: 103cb380c494df04ba83638c7a6bba08, type: 2}
   checkMark: {fileID: 1111801838127648, guid: 2763aa8c3446d1b4ca17e4dbdcddf47d, type: 2}
 --- !u!54 &2103237428
@@ -2305,6 +2308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 447291101}
+  thePlayer: {fileID: 713914940}
   spawner: {fileID: 181041151}
   errorCount: 0
   maxErrors: 3

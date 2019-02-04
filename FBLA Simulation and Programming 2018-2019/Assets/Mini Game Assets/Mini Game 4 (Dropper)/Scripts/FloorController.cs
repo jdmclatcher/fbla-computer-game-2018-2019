@@ -3,15 +3,15 @@
 
 public class FloorController : MonoBehaviour {
 
-    private MiniGame5UI ui;
+    [SerializeField] private MiniGame5UI ui;
 
     [SerializeField] private GameObject xMark;
     [SerializeField] private GameObject checkMark;
 
-    private void Start()
-    {
-        ui = FindObjectOfType<MiniGame5UI>();
-    }
+    //private void Start()
+    //{
+    //    ui = FindObjectOfType<MiniGame5UI>();
+    //}
 
     private void OnTriggerEnter(Collider other)
     {

@@ -5326,6 +5326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 447291101}
+  thePlayer: {fileID: 251655813}
   totalBoxes: 4
   startingRepPoints: 300
   pointsLostPerSecond: 1

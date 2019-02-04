@@ -12,11 +12,11 @@ public class DropperPlayerController : MonoBehaviour {
     [SerializeField] private GameObject checkMark;
     
 
-    private MiniGame5UI ui;
+    [SerializeField] private MiniGame5UI ui;
 
     private void Start()
     {
-        ui = FindObjectOfType<MiniGame5UI>();
+        // ui = FindObjectOfType<MiniGame5UI>();
         IWaitForCountdown();
         
     }

@@ -49,12 +49,12 @@ public class MiniGame6UI : MonoBehaviour {
 
     #region Start and Update
     // ref to player
-    private BoxPlayerController thePlayer;
+    [SerializeField] private BoxPlayerController thePlayer;
 
     private void Start()
     {
         gameEndScreen.SetActive(false); // disable game ending screen at start
-        thePlayer = FindObjectOfType<BoxPlayerController>();
+        // thePlayer = FindObjectOfType<BoxPlayerController>();
         // set boxes text and val
         boxesLeft = totalBoxes;
         boxesLeftText.text = totalBoxes.ToString();

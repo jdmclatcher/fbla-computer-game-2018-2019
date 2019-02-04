@@ -14,7 +14,7 @@ public class DropperSpawner : MonoBehaviour
 
     [SerializeField] private Transform spawnPosCONST;
 
-    private MiniGame5UI ui;
+    [SerializeField] private MiniGame5UI ui;
 
 
     // when the object is activated, immediately spawn the object
@@ -22,7 +22,7 @@ public class DropperSpawner : MonoBehaviour
     {
         ResetTime();
         // get ref to UI
-        ui = FindObjectOfType<MiniGame5UI>();
+        // ui = FindObjectOfType<MiniGame5UI>();
         // set objects length var in ui to be length of array list
         ui.objectsLength = objectsToSpawn.Count; 
     }

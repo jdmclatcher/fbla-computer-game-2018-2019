@@ -52,12 +52,12 @@ public class MiniGame5UI : MonoBehaviour
 
     #region Start and Update
 
-    private DropperPlayerController thePlayer;
+    [SerializeField] private DropperPlayerController thePlayer;
 
     private void Start()
     {
         // pre game setup
-        thePlayer = FindObjectOfType<DropperPlayerController>(); // get ref to player
+        // thePlayer = FindObjectOfType<DropperPlayerController>(); // get ref to player
         gameEndScreen.SetActive(false);
         spawner.SetActive(false);
         livesCounter.text = maxErrors.ToString();

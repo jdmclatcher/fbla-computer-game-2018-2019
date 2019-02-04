@@ -26,7 +26,7 @@ public class Player : MonoBehaviour {
 
     [SerializeField] private float collisionRestrainDuration; // amount of time to be stunned for
 
-    UI ui;
+    [SerializeField] private UI ui;
 
     // check that becomes true when game initially starts, but wears off when leaving trigger
     private bool respawnInvincible;
@@ -48,7 +48,7 @@ public class Player : MonoBehaviour {
 
 
         // Finds the UI component in the scene
-        ui = FindObjectOfType<UI>();
+        // ui = FindObjectOfType<UI>();
         Cursor.visible = false;
         restrained = false;
         // multiplier to reduce (using division) the X movement (side to side) 

@@ -42,6 +42,7 @@ public class MiniGame4UI : MonoBehaviour {
 
     private void Start()
     {
+        timer.SetActive(true);
         // set active camera to be the main one
         main.enabled = true;
         bRoll.SetActive(false);
@@ -54,9 +55,7 @@ public class MiniGame4UI : MonoBehaviour {
         // set local values
         instructionsTextLOCAL = instructionsText.text;
         // start countdown at beginning of game
-        StartCoroutine(ICountdown());
-        
-        
+        StartCoroutine(ICountdown());  
     }
     #endregion
 
@@ -93,6 +92,7 @@ public class MiniGame4UI : MonoBehaviour {
     [SerializeField] private int repPointsToAdd;
     [SerializeField] private GameObject gameEnd;
     [SerializeField] private TextMeshProUGUI repPointsText;
+
     // whether player got question correct
     [SerializeField] private TextMeshProUGUI questionResultText;
     [SerializeField] private string correctString;
@@ -104,6 +104,7 @@ public class MiniGame4UI : MonoBehaviour {
     [SerializeField] private int panDuration;
     [SerializeField] private float secondsToWait;
     [SerializeField] private Button[] buttons;
+    [SerializeField] private GameObject timer;
 
     private bool correct;
     private bool hasAnswered = false;
@@ -114,6 +115,7 @@ public class MiniGame4UI : MonoBehaviour {
     {
         button.GetComponent<Image>().color = Color.red;
         Debug.Log("Oops. That's not the correct answer.");
+        timer.SetActive(false);
 
         StartCoroutine(IWaitDefeat()); // wait before defeat
 
@@ -123,6 +125,7 @@ public class MiniGame4UI : MonoBehaviour {
     {
         button.GetComponent<Image>().color = Color.green;
         Debug.Log("Congrats! You got it correct!");
+        timer.SetActive(false);
 
         StartCoroutine(IWaitVictory()); // wait before victory
 

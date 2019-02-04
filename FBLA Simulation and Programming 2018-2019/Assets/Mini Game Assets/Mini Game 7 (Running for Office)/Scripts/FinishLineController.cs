@@ -8,7 +8,7 @@ public class FinishLineController : MonoBehaviour {
     [SerializeField] private float moveSpeed;
 
     private MiniGame3UI ui;
-	
+
     private void Start()
     {
         ui = FindObjectOfType<MiniGame3UI>();

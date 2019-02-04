@@ -7608,6 +7608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameTime: 15.4
+  ui: {fileID: 2046404540}
 --- !u!1 &1189631512
 GameObject:
   m_ObjectHideFlags: 0
@@ -9917,6 +9918,7 @@ MonoBehaviour:
   - {fileID: 1889907408}
   - {fileID: 1665428687}
   - {fileID: 481696344}
+  timer: {fileID: 956322059}
 --- !u!1 &2060676168
 GameObject:
   m_ObjectHideFlags: 0
