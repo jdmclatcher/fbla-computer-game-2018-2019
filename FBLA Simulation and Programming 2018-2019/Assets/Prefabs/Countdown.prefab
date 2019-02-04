@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 224842733771971356}
   - component: {fileID: 222067944451349376}
   - component: {fileID: 114853499694419870}
-  - component: {fileID: 114364777226519734}
   - component: {fileID: 111744723019362412}
   m_Layer: 0
   m_Name: Countdown
@@ -45,18 +44,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &114364777226519734
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1020034639033290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 782d051fab9e00d41a84939400e1cc78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToWait: 3.5
 --- !u!114 &114853499694419870
 MonoBehaviour:
   m_ObjectHideFlags: 1

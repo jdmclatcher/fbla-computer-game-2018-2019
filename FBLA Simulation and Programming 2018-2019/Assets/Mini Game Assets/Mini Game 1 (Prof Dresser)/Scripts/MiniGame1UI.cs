@@ -10,6 +10,8 @@ public class MiniGame1UI : MonoBehaviour {
 
     private void Start()
     {
+        countdown.gameObject.SetActive(false);
+        curtain.gameObject.SetActive(true);
         // co-routine that changes the text value every second
         StartCoroutine(_countdown());
         clothes.SetActive(false);
@@ -23,20 +25,28 @@ public class MiniGame1UI : MonoBehaviour {
     #region Countdown
 
     [Header("Countdown")]
-    [SerializeField] private TextMeshProUGUI countdown;
+    [SerializeField] private GameObject countdown;
     [SerializeField] private float timeToWait;
     [SerializeField] private GameObject clothes;
+    [SerializeField] private GameObject curtain;
 
     // co-routine that counts down from 3
     IEnumerator _countdown()
     {
+        // wait until curtain is open, then start coutdown
+        yield return new WaitUntil(() => curtain.activeInHierarchy == false);
+        countdown.gameObject.SetActive(true); // then set coutdown to active
+
+        // ref to text object
+        TextMeshProUGUI countdownText = countdown.GetComponent<TextMeshProUGUI>();
         yield return new WaitForSeconds(timeToWait);
-        countdown.text = "2";
+        countdownText.text = "2";
         yield return new WaitForSeconds(timeToWait);
-        countdown.text = "1";
+        countdownText.text = "1";
         yield return new WaitForSeconds(timeToWait);
-        countdown.text = "GO!";
+        countdownText.text = "GO!";
         yield return new WaitForSeconds(timeToWait);
+        countdown.gameObject.SetActive(false); // stop countdown
         clothes.SetActive(true);
         // START OFFICIAL TIMER
     }

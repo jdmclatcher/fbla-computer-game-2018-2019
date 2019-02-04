@@ -27,12 +27,19 @@ public class MiniGame6UI : MonoBehaviour {
     #region Countdown
     
     [Header("Countdown")]
-    [SerializeField] private TextMeshProUGUI countdownText;
+    [SerializeField] private GameObject countdown;
+    [SerializeField] private GameObject curtain;
 
     IEnumerator ICountdown()
     {
         // cant move before countdown
         thePlayer.restrained = true;
+        // wait until curtain is open, then start coutdown
+        yield return new WaitUntil(() => curtain.activeInHierarchy == false);
+        countdown.gameObject.SetActive(true); // then set coutdown to active
+
+        // ref to text object
+        TextMeshProUGUI countdownText = countdown.GetComponent<TextMeshProUGUI>();
         yield return new WaitForSeconds(0.9f);
         countdownText.text = "2";
         yield return new WaitForSeconds(0.9f);
@@ -40,6 +47,7 @@ public class MiniGame6UI : MonoBehaviour {
         yield return new WaitForSeconds(0.9f);
         countdownText.text = "GO!";
         yield return new WaitForSeconds(0.9f);
+        countdown.gameObject.SetActive(false); // stop countdown
         // game begin 
         // can move after countdown
         thePlayer.restrained = false;
@@ -53,6 +61,8 @@ public class MiniGame6UI : MonoBehaviour {
 
     private void Start()
     {
+        curtain.SetActive(true);
+        countdown.SetActive(false);
         gameEndScreen.SetActive(false); // disable game ending screen at start
         // thePlayer = FindObjectOfType<BoxPlayerController>();
         // set boxes text and val

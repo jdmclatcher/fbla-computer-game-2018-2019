@@ -16,10 +16,17 @@ public class MiniGame8UI : MonoBehaviour {
     #region Countdown
 
     [Header("Countdown")]
-    [SerializeField] private TextMeshProUGUI countdownText;
+    [SerializeField] private GameObject countdown;
+    [SerializeField] private GameObject curtain;
 
     IEnumerator ICountdown()
     {
+        // wait until curtain is open, then start coutdown
+        yield return new WaitUntil(() => curtain.activeInHierarchy == false);
+        countdown.gameObject.SetActive(true); // then set coutdown to active
+
+        // ref to text object
+        TextMeshProUGUI countdownText = countdown.GetComponent<TextMeshProUGUI>();
         yield return new WaitForSeconds(0.9f);
         countdownText.text = "2";
         yield return new WaitForSeconds(0.9f);
@@ -27,7 +34,7 @@ public class MiniGame8UI : MonoBehaviour {
         yield return new WaitForSeconds(0.9f);
         countdownText.text = "GO!";
         yield return new WaitForSeconds(0.9f);
-        // game begin 
+        countdown.gameObject.SetActive(false); // stop countdown
         gameStuff.SetActive(true);
     }
 
@@ -36,6 +43,8 @@ public class MiniGame8UI : MonoBehaviour {
     #region Start and Update
     private void Start()
     {
+        countdown.SetActive(false);
+        curtain.SetActive(true);
         repPoints = totalStartingPoints; // rep points equal amount to start with
         gameEndScreen.SetActive(false);
         gameStuff.SetActive(false);

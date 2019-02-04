@@ -35,19 +35,27 @@ public class MiniGame3UI : MonoBehaviour {
     #region Countdown
 
     [Header("Countdown")]
-    [SerializeField] private TextMeshProUGUI countdown;
+    [SerializeField] private GameObject countdown;
+    [SerializeField] private GameObject curtain;
     [SerializeField] private GameObject bgSpawner;
 
     // co-routine that counts down from 3
     IEnumerator _countdown()
     {
+        // wait until curtain is open, then start coutdown
+        yield return new WaitUntil(() => curtain.activeInHierarchy == false);
+        countdown.gameObject.SetActive(true); // then set coutdown to active
+
+        // ref to text object
+        TextMeshProUGUI countdownText = countdown.GetComponent<TextMeshProUGUI>();
         yield return new WaitForSeconds(0.9f);
-        countdown.text = "2";
+        countdownText.text = "2";
         yield return new WaitForSeconds(0.9f);
-        countdown.text = "1";
+        countdownText.text = "1";
         yield return new WaitForSeconds(0.9f);
-        countdown.text = "GO!";
+        countdownText.text = "GO!";
         yield return new WaitForSeconds(0.9f);
+        countdown.gameObject.SetActive(false); // stop countdown
         bgSpawner.SetActive(true);
         SpawnObject();
         SetRandTime();
@@ -60,6 +68,8 @@ public class MiniGame3UI : MonoBehaviour {
 
     private void Start()
     {
+        curtain.SetActive(true);
+        countdown.SetActive(false);
         SetRandTime(); // set the init rand time interval for obstacle
         bgSpawner.SetActive(false);
         gameCompletedScreen.SetActive(false);

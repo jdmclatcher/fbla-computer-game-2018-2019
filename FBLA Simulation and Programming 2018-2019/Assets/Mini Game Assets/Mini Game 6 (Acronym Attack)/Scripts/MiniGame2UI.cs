@@ -41,7 +41,8 @@ public class MiniGame2UI : MonoBehaviour {
     [SerializeField] private GameObject endGameScreen;
     [SerializeField] private TextMeshProUGUI repPointsText;
     [SerializeField] private TextMeshProUGUI lettersIncorrectText;
-    [SerializeField] private TextMeshProUGUI countdown;
+    [SerializeField] private GameObject countdown;
+    [SerializeField] private GameObject curtain;
     [SerializeField] private GameObject game;
     [SerializeField] private RectTransform checkXSpawnPos;
     [SerializeField] private GameObject check;
@@ -54,6 +55,8 @@ public class MiniGame2UI : MonoBehaviour {
     #region Start and Update
     private void Start()
     {
+        curtain.SetActive(true);
+        countdown.SetActive(false);
         timeLeft = gameTime; // set current time to the start time defined in editor
         paused = true;
         game.SetActive(false); // disable games objects at the beginning
@@ -84,13 +87,20 @@ public class MiniGame2UI : MonoBehaviour {
     IEnumerator _countdown()
     {
         endGameScreen.SetActive(false);
+        // wait until curtain is open, then start coutdown
+        yield return new WaitUntil(() => curtain.activeInHierarchy == false);
+        countdown.gameObject.SetActive(true); // then set coutdown to active
+
+        // ref to text object
+        TextMeshProUGUI countdownText = countdown.GetComponent<TextMeshProUGUI>();
         yield return new WaitForSeconds(0.9f);
-        countdown.text = "2";
+        countdownText.text = "2";
         yield return new WaitForSeconds(0.9f);
-        countdown.text = "1";
+        countdownText.text = "1";
         yield return new WaitForSeconds(0.9f);
-        countdown.text = "GO!";
+        countdownText.text = "GO!";
         yield return new WaitForSeconds(0.9f);
+        countdown.gameObject.SetActive(false); // stop countdown
         paused = false;
         SpawnAcronym(); // spawns first acronym
         game.SetActive(true); // enable games objects

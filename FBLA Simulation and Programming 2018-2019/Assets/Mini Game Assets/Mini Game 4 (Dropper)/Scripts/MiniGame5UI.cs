@@ -30,11 +30,18 @@ public class MiniGame5UI : MonoBehaviour
 
     #region Countdown
     [Header("Countdown")]
-    [SerializeField] private TextMeshProUGUI countdownText;
+    [SerializeField] private GameObject countdown;
+    [SerializeField] private GameObject curtain;
 
     IEnumerator ICountdown()
     {
         thePlayer.canMove = false;
+        // wait until curtain is open, then start coutdown
+        yield return new WaitUntil(() => curtain.activeInHierarchy == false);
+        countdown.gameObject.SetActive(true); // then set coutdown to active
+
+        // ref to text object
+        TextMeshProUGUI countdownText = countdown.GetComponent<TextMeshProUGUI>();
         yield return new WaitForSeconds(0.9f);
         countdownText.text = "2";
         yield return new WaitForSeconds(0.9f);
@@ -42,6 +49,7 @@ public class MiniGame5UI : MonoBehaviour
         yield return new WaitForSeconds(0.9f);
         countdownText.text = "GO!";
         yield return new WaitForSeconds(0.9f);
+        countdown.gameObject.SetActive(false); // stop countdown
         spawner.SetActive(true); // game begins when spawner becomes active
         // game begin 
         thePlayer.canMove = true;
@@ -58,6 +66,8 @@ public class MiniGame5UI : MonoBehaviour
     {
         // pre game setup
         // thePlayer = FindObjectOfType<DropperPlayerController>(); // get ref to player
+        curtain.SetActive(true);
+        countdown.SetActive(false);
         gameEndScreen.SetActive(false);
         spawner.SetActive(false);
         livesCounter.text = maxErrors.ToString();

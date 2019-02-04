@@ -19,11 +19,18 @@ public class MiniGame4UI : MonoBehaviour {
     #region Countdown
 
     [Header("Countdown")]
-    [SerializeField] private TextMeshProUGUI countdownText;
+    [SerializeField] private GameObject countdown;
+    [SerializeField] private GameObject curtain;
 
     // co-routine that counts down from 3
     IEnumerator ICountdown()
     {
+        // wait until curtain is open, then start coutdown
+        yield return new WaitUntil(() => curtain.activeInHierarchy == false);
+        countdown.gameObject.SetActive(true); // then set coutdown to active
+
+        // ref to text object
+        TextMeshProUGUI countdownText = countdown.GetComponent<TextMeshProUGUI>();
         yield return new WaitForSeconds(0.9f);
         countdownText.text = "2";
         yield return new WaitForSeconds(0.9f);
@@ -31,6 +38,7 @@ public class MiniGame4UI : MonoBehaviour {
         yield return new WaitForSeconds(0.9f);
         countdownText.text = "GO!";
         yield return new WaitForSeconds(0.9f);
+        countdown.gameObject.SetActive(false); // stop countdown
         // init stuff
         // start couroutine to spawn and check value of answer
         StartCoroutine(IGameUIStart());
@@ -42,6 +50,8 @@ public class MiniGame4UI : MonoBehaviour {
 
     private void Start()
     {
+        countdown.gameObject.SetActive(false);
+        curtain.gameObject.SetActive(true);
         timer.SetActive(true);
         // set active camera to be the main one
         main.enabled = true;
