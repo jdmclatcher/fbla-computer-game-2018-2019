@@ -1,15 +1,21 @@
 ﻿using UnityEngine;  
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System.Collections;
 using TMPro;
 using UnityEngine.UI;
 
 public class UI : MonoBehaviour {
 
-    // TODO add transitions to mini game scenes using image BGs and anims
+    // TODO add transitions to mini game scenes using image BGs and anims 
+    //  just add object at beginning of scene to run until anim stops, then activate the 
+    //  the countdown script
+
     // TODO add textmeshpro to sub-ui text elements
     // TODO add a credits slide to cite information - national website, national dress code, etc...
 
+ 
+    // TOFIX only the main mini game items are getting the exit animation
+    
     [SerializeField] private TextMeshProUGUI supportersText;
     public int supportersToFinish1;
     public int supportersToFinish2;
@@ -64,6 +70,9 @@ public class UI : MonoBehaviour {
 
     [SerializeField] private Canvas mainWorldCanvas;
 
+    [Header("Extras")]
+    [SerializeField] private GameObject miniGameItemsUI; // for anims
+
     public void ShowMiniGameUI()
     { 
         Cursor.visible = true; // show the cursor
@@ -93,15 +102,25 @@ public class UI : MonoBehaviour {
     // loads RANDOM mini-game scene
     public void TransitionMiniGameScenes()
     {
-        // load specified scene
+        // load specified scene from curtain object
         curtainController.SetStuff(miniGameScene + gameNumber.ToString());
-        // StartCoroutine(curtainController.IOpen(miniGameScene + gameNumber.ToString())); 
-        Debug.Log(gameNumber);
+        //Debug.Log(gameNumber);
     }
 
     // when the player presses the QUIT option
     public void QuitMiniGameUI()
     {
+        StartCoroutine(IQuitMiniGameUI()); // run a coroutine
+    }
+
+    private IEnumerator IQuitMiniGameUI()
+    {
+        Animation animation = miniGameItemsUI.gameObject.GetComponent<Animation>();
+        animation.Play("MiniZoomOut");
+
+        // wait until anim stops
+        yield return new WaitUntil(() => animation.IsPlaying("MiniZoomOut") == false);
+
         // enable world canvas again
         mainWorldCanvas.gameObject.SetActive(true);
         Debug.Log(gameNumber);
@@ -113,6 +132,8 @@ public class UI : MonoBehaviour {
         miniGameUI.SetActive(false);
         freeToMove = true;
     }
+
+
 
     #endregion
 

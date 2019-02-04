@@ -11,12 +11,13 @@ public class OpenSceneAfterTime : MonoBehaviour {
 
     private void Start()
     {
-        gameObject.SetActive(false); // diable anim and sef by default
+        gameObject.SetActive(false); // disable anim and object by default
     }
 
     // TODO CHANGE TO UPDATE
     private void Update()
-    {
+    { 
+        // after certain time, will load scene
         timeToWait -= Time.deltaTime;
         if(timeToWait <= 0)
         {
@@ -24,6 +25,8 @@ public class OpenSceneAfterTime : MonoBehaviour {
         }
     }
 
+    // called on the UI script and passes in the necessary values
+    // for loading scenes
     public void SetStuff(string sceneToLoad)
     {
         gameObject.SetActive(true);
