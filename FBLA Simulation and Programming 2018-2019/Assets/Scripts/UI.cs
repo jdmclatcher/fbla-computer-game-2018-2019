@@ -154,14 +154,20 @@ public class UI : MonoBehaviour {
     [SerializeField] private int repPointsBoundsInc;
     [SerializeField] private TextMeshProUGUI minVal;
     [SerializeField] private TextMeshProUGUI maxVal;
+    private int supporters = 0;
 
     // function that will determine what the slider should look like
     // based on rep points total
     private void SetSliderBounds()
     {
-        if (repPoints > slider.maxValue)
+        if (repPoints >= slider.maxValue)
         {
-            // add 1 to player prefs supporters
+            
+            // supporters starts a 0 every time the person loads the world scene
+            supporters++; // add one to the supporters every time this function runs
+            
+
+
             PlayerPrefs.SetInt("Supporters", PlayerPrefs.GetInt("Supporters") + 1);
             // add increase in rep points to min and max value (times the scalar)
             slider.minValue += repPointsBoundsInc;
@@ -179,7 +185,10 @@ public class UI : MonoBehaviour {
         
 
         // every time UI loads, will update supporters text value
-        supportersText.text = PlayerPrefs.GetInt("Supporters").ToString();
+        supportersText.text = supporters.ToString();
+
+        // set the player prefs supporters
+        PlayerPrefs.SetInt("Supporters", supporters);
     }
 
     #endregion
