@@ -130,7 +130,17 @@ public class MiniGame2UI : MonoBehaviour {
 
         if (acronyms.Count == 0)
         {
-            GameEnd();
+            // only will run if the game end screen has not been
+            // enabled
+            if (!endGameScreen.activeInHierarchy)
+            {
+                GameEnd();
+            } else
+            {
+                // otherwise, return
+                return;
+            }
+            
         }
 
         foreach (GameObject acronym in acronyms)

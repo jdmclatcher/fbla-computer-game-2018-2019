@@ -14,6 +14,9 @@ STAGE 2
 
 NOTES
 
+
+
+
+BUGS:
+
 fix rep points being like 1000000000 after acronym game i think??
-
-

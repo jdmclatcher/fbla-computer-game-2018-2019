@@ -26,6 +26,9 @@ public class UI : MonoBehaviour {
     #region Start and Update
     private void Start()
     {
+        // setup cameras
+        endingCamera.enabled = false;
+        mainCamera.enabled = true;
         // enable both walls
         wall1.SetActive(true);
         wall2.SetActive(true);
@@ -104,7 +107,6 @@ public class UI : MonoBehaviour {
     {
         // load specified scene from curtain object
         curtainController.SetStuff(miniGameScene + gameNumber.ToString());
-        //Debug.Log(gameNumber);
     }
 
     // when the player presses the QUIT option
@@ -118,6 +120,11 @@ public class UI : MonoBehaviour {
         Animation animation = miniGameItemsUI.gameObject.GetComponent<Animation>();
         animation.Play("MiniZoomOut");
 
+        // play the animation on the specific mini game UI as well
+        GameObject specificMiniGameObj = GameObject.Find("MiniGame" + gameNumber.ToString());
+        Animation miniAnimation = specificMiniGameObj.GetComponent<Animation>();
+        miniAnimation.Play("MiniZoomOut"); // play anim on mini game specific object as well
+
         // wait until anim stops
         yield return new WaitUntil(() => animation.IsPlaying("MiniZoomOut") == false);
 
@@ -126,7 +133,10 @@ public class UI : MonoBehaviour {
         Debug.Log(gameNumber);
         Cursor.visible = false; // hide the cursor again
         // disable popup UI by finding the gameObject by name
-        GameObject.Find("MiniGame" + gameNumber.ToString()).SetActive(false);
+
+ 
+
+        specificMiniGameObj.SetActive(false);
 
         // disable main UI after
         miniGameUI.SetActive(false);
@@ -153,7 +163,7 @@ public class UI : MonoBehaviour {
         {
             // add 1 to player prefs supporters
             PlayerPrefs.SetInt("Supporters", PlayerPrefs.GetInt("Supporters") + 1);
-            // add increase in rep points to min and max value
+            // add increase in rep points to min and max value (times the scalar)
             slider.minValue += repPointsBoundsInc;
             slider.maxValue += repPointsBoundsInc;
 
@@ -175,15 +185,56 @@ public class UI : MonoBehaviour {
     #endregion
 
     #region Game End/Victory
-   
+
+    [Header("Victory")]
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private Camera endingCamera;
+    [SerializeField] private float camPause;
+
     // "open the gates"
-    public void OpenTheGate1()
+    public IEnumerator OpenTheGate1()
     {
-        wall1.SetActive(false);
+        // TODO fancy stuff
+        // wall opening animation
+        Animation wallAnim = wall1.GetComponent<Animation>();
+        wallAnim.Play("Wall Open");
+
+        wall1.gameObject.GetComponent<BoxCollider>().enabled = false; // disable box trigger
+
+        // cameras
+        endingCamera.enabled = true;
+        mainCamera.enabled = false;
+
+        // camera sweep animation
+        Animation cameraAnim = endingCamera.gameObject.GetComponent<Animation>();
+        cameraAnim.Play("Cutscene Wall Cam");
+
+        // wait until camera anim is done
+        yield return new WaitUntil(() => cameraAnim.IsPlaying("Cutscene Wall Cam") == false);
+
+        yield return new WaitForSeconds(camPause);
+
+
+        // reset pos
+        cameraAnim.Play("Cam Revert");
+
+        // wait until camera anim is done
+        yield return new WaitUntil(() => cameraAnim.IsPlaying("Cam Revert") == false);
+
+        // then reset cameras
+        mainCamera.enabled = true;
+        endingCamera.enabled = false;
+
+
+        
+
+
+        // wall1.SetActive(false);
     }
 
-    public void OpenTheGate2()
+    public IEnumerator OpenTheGate2()
     {
+        yield return new WaitForSeconds(1);
         wall2.SetActive(false);
     }
 

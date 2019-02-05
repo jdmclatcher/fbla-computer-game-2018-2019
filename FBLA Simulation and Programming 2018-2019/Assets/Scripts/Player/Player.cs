@@ -176,7 +176,7 @@ public class Player : MonoBehaviour {
                 {
                     // TODO open the gate!
                     Debug.Log("Congrats! You can move on now.");
-                    ui.OpenTheGate1(); // go to next level
+                    StartCoroutine(ui.OpenTheGate1()); // go to next level
                 } else
                 {
                     // TODO give a helpful message of rejection
@@ -190,7 +190,7 @@ public class Player : MonoBehaviour {
                 {
                     // TODO win the game
                     Debug.Log("Congrats! You have completed the game!");
-                    ui.OpenTheGate2(); // (win the game)
+                    StartCoroutine(ui.OpenTheGate2()); // (win the game)
                 }
                 else
                 {
