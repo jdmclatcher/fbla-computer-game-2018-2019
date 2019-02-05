@@ -53,6 +53,7 @@ public class MiniGame5UI : MonoBehaviour
         spawner.SetActive(true); // game begins when spawner becomes active
         // game begin 
         thePlayer.canMove = true;
+        helpText.SetActive(true);// enable help text
     }
 
 
@@ -61,11 +62,13 @@ public class MiniGame5UI : MonoBehaviour
     #region Start and Update
 
     [SerializeField] private DropperPlayerController thePlayer;
+    [SerializeField] private GameObject helpText;
 
     private void Start()
     {
         // pre game setup
         // thePlayer = FindObjectOfType<DropperPlayerController>(); // get ref to player
+        helpText.SetActive(false);
         curtain.SetActive(true);
         countdown.SetActive(false);
         gameEndScreen.SetActive(false);

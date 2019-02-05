@@ -39,6 +39,7 @@ TagManager:
   - Box/2
   - Box/3
   - Box/4
+  - The End
   layers:
   - Default
   - TransparentFX

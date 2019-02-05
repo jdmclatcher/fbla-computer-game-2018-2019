@@ -110,7 +110,10 @@ public class MiniGame1UI : MonoBehaviour {
     IEnumerator IEndGame()
     {
         Debug.Log("You've been game ended.");
-        yield return new WaitForSeconds(0.5f); // wait half a second before ending game
+        // gameObject.GetComponent<CanvasGroup>().interactable = false; // disable clicking buttons
+        yield return new WaitForSeconds(0.2f); // wait half a second before ending game
+        // gameObject.GetComponent<CanvasGroup>().interactable = true; // enable clicking buttons
+
         clothes.SetActive(false); // disable the clothes
         // input point values into victory screen text objects
         incorrectNumText.text = incorrectCount.ToString();

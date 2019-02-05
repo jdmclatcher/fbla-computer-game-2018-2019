@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class OpenSceneAfterTime : MonoBehaviour {
 
     [SerializeField] private float timeToWait;
-    private string sceneToLoad;
+    [SerializeField] private string sceneToLoad;
 
     private void Start()
     {

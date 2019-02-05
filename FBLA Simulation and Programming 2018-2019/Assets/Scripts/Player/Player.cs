@@ -44,7 +44,7 @@ public class Player : MonoBehaviour {
     void Start()
     {
         // TEMP reset playerprefs on scene enter
-        ResetPrefs(); // resets everything, so it will always be the first time playing
+        // ResetPrefs(); // resets everything, so it will always be the first time playing
 
 
         // Finds the UI component in the scene
@@ -91,11 +91,11 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        // TEMPORARY - until a game UI and HUD script is created
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Cursor.visible = false;
-        }
+        
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    Cursor.visible = false;
+        //}
 
         // runs the movement and rotation code only if the player is allowed to move
         if (!restrained)
@@ -119,12 +119,7 @@ public class Player : MonoBehaviour {
             //}
         }
 
-        // TEMP escape key quits game
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            Debug.Log("Game quit.");
-            Application.Quit();
-        }
+        
     }
     #endregion
 
@@ -197,7 +192,11 @@ public class Player : MonoBehaviour {
                     Debug.Log("You need to get more supporters.");
                 }
                 break;
-            
+            case "The End":
+                ResetPrefs(); // confirmed the end, so reset all player prefs and values
+                ui.fadeToBlack.SetActive(true); // start the fade
+
+                break;
             default:
                 break;
         }
@@ -347,8 +346,8 @@ public class Player : MonoBehaviour {
     // reset playerprefs rep points value
     private void ResetPrefs()
     {
-        //PlayerPrefs.SetInt("Rep Points", 0);
-        //PlayerPrefs.SetInt("Supporters", 0);
+        PlayerPrefs.SetInt("Rep Points", 0);
+        PlayerPrefs.SetInt("Supporters", 0);
         PlayerPrefs.SetFloat("xLOC", startPosition.position.x);
         PlayerPrefs.SetFloat("yLOC", startPosition.position.y);
         PlayerPrefs.SetFloat("zLOC", startPosition.position.z);

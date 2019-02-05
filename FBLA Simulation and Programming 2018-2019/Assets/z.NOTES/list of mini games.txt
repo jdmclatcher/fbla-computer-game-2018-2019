@@ -16,8 +16,11 @@ NOTES
 
 just need the content really...
 
+and the sounds
+plus the polish on the ending and starting UI scenes
+
+... and the models
+
 
 
 BUGS:
-
-fix rep points being like 1000000000 after acronym game i think??

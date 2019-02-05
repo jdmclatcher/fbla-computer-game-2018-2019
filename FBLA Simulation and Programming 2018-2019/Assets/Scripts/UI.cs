@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour {
 
@@ -23,9 +24,13 @@ public class UI : MonoBehaviour {
     [SerializeField] private GameObject wall1;
     [SerializeField] private GameObject wall2;
 
+    [SerializeField] private GameObject pauseUI;
+    private bool isPaused; // check if game is paused or not
+
     #region Start and Update
     private void Start()
     {
+        fadeToBlack.SetActive(false);
         // setup cameras
         endingCamera.enabled = false;
         mainCamera.enabled = true;
@@ -44,7 +49,41 @@ public class UI : MonoBehaviour {
         
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            PauseGame();
+        }
+    }
+
     #endregion
+
+    private void PauseGame()
+    {
+        // do stuff based on if game is paused or not
+        if (isPaused)
+        {
+            Cursor.visible = false;
+            Time.timeScale = 1f;
+            pauseUI.SetActive(false);
+            isPaused = false;
+        } else
+        {
+            Cursor.visible = true;
+            Time.timeScale = 0f;
+            pauseUI.SetActive(true);
+            isPaused = true;
+        }
+        
+    }
+
+    public void QuitGame()
+    {
+        Time.timeScale = 1f; // resume normal time
+        Application.Quit(); // TEMP
+        // SceneManager.LoadScene("Title"); // go back to title screen
+    }
 
     #region Mini-Game
 
@@ -199,6 +238,7 @@ public class UI : MonoBehaviour {
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Camera endingCamera;
     [SerializeField] private float camPause;
+    public GameObject fadeToBlack;
 
     // "open the gates"
     public IEnumerator OpenTheGate1()
@@ -243,8 +283,36 @@ public class UI : MonoBehaviour {
 
     public IEnumerator OpenTheGate2()
     {
-        yield return new WaitForSeconds(1);
-        wall2.SetActive(false);
+        // TODO fancy stuff
+        // wall opening animation
+        Animation wallAnim = wall2.GetComponent<Animation>();
+        wallAnim.Play("Wall 2 Open"); // change in wall animation name
+
+        wall2.gameObject.GetComponent<BoxCollider>().enabled = false; // disable box trigger
+
+        // cameras
+        endingCamera.enabled = true;
+        mainCamera.enabled = false;
+
+        // camera sweep animation
+        Animation cameraAnim = endingCamera.gameObject.GetComponent<Animation>();
+        cameraAnim.Play("Cutscene Wall Cam");
+
+        // wait until camera anim is done
+        yield return new WaitUntil(() => cameraAnim.IsPlaying("Cutscene Wall Cam") == false);
+
+        yield return new WaitForSeconds(camPause);
+
+
+        // reset pos
+        cameraAnim.Play("Cam Revert");
+
+        // wait until camera anim is done
+        yield return new WaitUntil(() => cameraAnim.IsPlaying("Cam Revert") == false);
+
+        // then reset cameras
+        mainCamera.enabled = true;
+        endingCamera.enabled = false;
     }
 
     #endregion

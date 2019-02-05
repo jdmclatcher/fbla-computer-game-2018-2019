@@ -203,10 +203,7 @@ public class MiniGame2UI : MonoBehaviour {
         endGameScreen.SetActive(true);
         paused = true; // stops timer
 
-        // adds the amount of rep points won in game to the total amount 
-        // of rep points
-
-        PlayerPrefs.SetInt("Rep Points", (PlayerPrefs.GetInt("Rep Points") + repPoints));
+        
 
         // decativate blinker underline
         // MISSING
@@ -217,6 +214,11 @@ public class MiniGame2UI : MonoBehaviour {
     // return to main world
     public void ExitGame()
     {
+        // adds the amount of rep points won in game to the total amount 
+        // of rep points right before leaving the game
+
+        PlayerPrefs.SetInt("Rep Points", (PlayerPrefs.GetInt("Rep Points") + repPoints));
+
         SceneManager.LoadScene("World");
     }
 

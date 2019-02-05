@@ -29,6 +29,8 @@ public class DropperPlayerController : MonoBehaviour {
         {
             transform.Translate(calculateXMovement(), 0, 0);
         }
+
+        
     }
 
     private float calculateXMovement()
@@ -36,7 +38,7 @@ public class DropperPlayerController : MonoBehaviour {
         // gets values for the X positon of the player from input
         // raw so there's no smoothing
 
-        walkX = Input.GetAxisRaw("Mouse X Keys") * Time.deltaTime * moveSpeed; 
+        walkX = Input.GetAxisRaw("Horizontal") * Time.deltaTime * moveSpeed; 
 
         return walkX;
     }
