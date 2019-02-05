@@ -347,6 +347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 84665132}
   - component: {fileID: 84665133}
+  - component: {fileID: 84665134}
   m_Layer: 5
   m_Name: MiniGame3
   m_TagString: Untagged
@@ -382,14 +383,25 @@ Animation:
   m_GameObject: {fileID: 84665131}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
+  m_Animation: {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
-  - {fileID: 7400000, guid: ec63a090f088c4844a3ebb21f77e47da, type: 2}
+  - {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
+  - {fileID: 7400000, guid: f0c06b73a2569f1418122ab84e34cd9f, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!225 &84665134
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 84665131}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &96055452
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,7 +434,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 214.20001}
+  m_AnchoredPosition: {x: 0, y: -153}
   m_SizeDelta: {x: 458.3, y: 71.20001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &96055454
@@ -447,7 +459,7 @@ MonoBehaviour:
   m_text: How To Play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
-  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: da3375f47643ed74ab6ab576a473174b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -520,7 +532,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -651,6 +663,8 @@ GameObject:
   - component: {fileID: 112176669}
   - component: {fileID: 112176668}
   - component: {fileID: 112176667}
+  - component: {fileID: 112176670}
+  - component: {fileID: 112176671}
   m_Layer: 5
   m_Name: MainCanvas
   m_TagString: Untagged
@@ -739,6 +753,33 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &112176670
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 112176665}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!111 &112176671
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 112176665}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
+  - {fileID: 7400000, guid: f0c06b73a2569f1418122ab84e34cd9f, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &112416147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,8 +1163,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 552.25, y: 421}
-  m_SizeDelta: {x: 382.7, y: 63.699997}
+  m_AnchoredPosition: {x: 1586.7, y: -151}
+  m_SizeDelta: {x: 360.1, y: 63.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &198307438
 MonoBehaviour:
@@ -1220,7 +1261,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -2672,6 +2713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 610519125}
   - component: {fileID: 610519126}
+  - component: {fileID: 610519127}
   m_Layer: 5
   m_Name: MiniGame5
   m_TagString: Untagged
@@ -2707,14 +2749,25 @@ Animation:
   m_GameObject: {fileID: 610519124}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
+  m_Animation: {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
-  - {fileID: 7400000, guid: ec63a090f088c4844a3ebb21f77e47da, type: 2}
+  - {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
+  - {fileID: 7400000, guid: f0c06b73a2569f1418122ab84e34cd9f, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!225 &610519127
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 610519124}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &619058938
 GameObject:
   m_ObjectHideFlags: 0
@@ -2952,6 +3005,8 @@ GameObject:
   m_Component:
   - component: {fileID: 661411389}
   - component: {fileID: 661411390}
+  - component: {fileID: 661411392}
+  - component: {fileID: 661411391}
   m_Layer: 5
   m_Name: Mini Game Main Items
   m_TagString: Untagged
@@ -2986,7 +3041,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 2104.8, y: 1263.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &661411390
 Animation:
@@ -2996,14 +3051,32 @@ Animation:
   m_GameObject: {fileID: 661411388}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
+  m_Animation: {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
-  - {fileID: 7400000, guid: ec63a090f088c4844a3ebb21f77e47da, type: 2}
+  - {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
+  - {fileID: 7400000, guid: f0c06b73a2569f1418122ab84e34cd9f, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!225 &661411391
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 661411388}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 1
+--- !u!222 &661411392
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 661411388}
+  m_CullTransparentMesh: 0
 --- !u!1 &701394916
 GameObject:
   m_ObjectHideFlags: 0
@@ -3294,7 +3367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -308.25, y: 421}
+  m_AnchoredPosition: {x: 670.75, y: -152}
   m_SizeDelta: {x: 258.2, y: 63.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &765593039
@@ -3392,7 +3465,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -3821,6 +3894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 910533763}
   - component: {fileID: 910533764}
+  - component: {fileID: 910533765}
   m_Layer: 5
   m_Name: MiniGame6
   m_TagString: Untagged
@@ -3856,14 +3930,25 @@ Animation:
   m_GameObject: {fileID: 910533762}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
+  m_Animation: {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
-  - {fileID: 7400000, guid: ec63a090f088c4844a3ebb21f77e47da, type: 2}
+  - {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
+  - {fileID: 7400000, guid: f0c06b73a2569f1418122ab84e34cd9f, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!225 &910533765
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 910533762}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &920959169
 GameObject:
   m_ObjectHideFlags: 0
@@ -3872,7 +3957,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 920959170}
-  - component: {fileID: 920959171}
   m_Layer: 5
   m_Name: Items
   m_TagString: Untagged
@@ -3901,21 +3985,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!111 &920959171
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 920959169}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &969704102
 GameObject:
   m_ObjectHideFlags: 0
@@ -3948,8 +4017,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 874, y: 421}
-  m_SizeDelta: {x: 258.2, y: 63.7}
+  m_AnchoredPosition: {x: 1889.4, y: -151}
+  m_SizeDelta: {x: 242.9, y: 63.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &969704104
 MonoBehaviour:
@@ -4046,7 +4115,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -4260,7 +4329,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -4297,6 +4366,8 @@ GameObject:
   - component: {fileID: 1110238142}
   - component: {fileID: 1110238141}
   - component: {fileID: 1110238140}
+  - component: {fileID: 1110238144}
+  - component: {fileID: 1110238143}
   m_Layer: 5
   m_Name: MiniGame
   m_TagString: Untagged
@@ -4391,6 +4462,32 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!111 &1110238143
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1110238138}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!225 &1110238144
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1110238138}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1138102876
 GameObject:
   m_ObjectHideFlags: 0
@@ -4702,7 +4799,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -50, y: -204}
+  m_AnchoredPosition: {x: -1052.4, y: 358}
   m_SizeDelta: {x: 528.6, y: 183.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1185298629
@@ -4800,6 +4897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1190907091}
   - component: {fileID: 1190907092}
+  - component: {fileID: 1190907093}
   m_Layer: 5
   m_Name: MiniGame4
   m_TagString: Untagged
@@ -4835,14 +4933,25 @@ Animation:
   m_GameObject: {fileID: 1190907090}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
+  m_Animation: {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
-  - {fileID: 7400000, guid: ec63a090f088c4844a3ebb21f77e47da, type: 2}
+  - {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
+  - {fileID: 7400000, guid: f0c06b73a2569f1418122ab84e34cd9f, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!225 &1190907093
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1190907090}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1191400476
 GameObject:
   m_ObjectHideFlags: 0
@@ -5850,6 +5959,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1473588974}
   - component: {fileID: 1473588975}
+  - component: {fileID: 1473588976}
   m_Layer: 5
   m_Name: MiniGame7
   m_TagString: Untagged
@@ -5885,14 +5995,25 @@ Animation:
   m_GameObject: {fileID: 1473588973}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
+  m_Animation: {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
-  - {fileID: 7400000, guid: ec63a090f088c4844a3ebb21f77e47da, type: 2}
+  - {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
+  - {fileID: 7400000, guid: f0c06b73a2569f1418122ab84e34cd9f, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!225 &1473588976
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1473588973}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1522486848
 GameObject:
   m_ObjectHideFlags: 0
@@ -6036,7 +6157,7 @@ MonoBehaviour:
   maxVal: {fileID: 353402488}
   mainCamera: {fileID: 1239051223}
   endingCamera: {fileID: 713260840}
-  camPause: 0
+  camPause: 0.5
 --- !u!4 &1547207394
 Transform:
   m_ObjectHideFlags: 0
@@ -6269,7 +6390,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -6303,6 +6424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1559356975}
   - component: {fileID: 1559356976}
+  - component: {fileID: 1559356977}
   m_Layer: 5
   m_Name: MiniGame2
   m_TagString: Untagged
@@ -6338,14 +6460,25 @@ Animation:
   m_GameObject: {fileID: 1559356974}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
+  m_Animation: {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
-  - {fileID: 7400000, guid: ec63a090f088c4844a3ebb21f77e47da, type: 2}
+  - {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
+  - {fileID: 7400000, guid: f0c06b73a2569f1418122ab84e34cd9f, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!225 &1559356977
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1559356974}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1615032398
 GameObject:
   m_ObjectHideFlags: 0
@@ -6447,7 +6580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -630, y: 421}
+  m_AnchoredPosition: {x: 349, y: -152}
   m_SizeDelta: {x: 382.7, y: 63.699997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1646600275
@@ -6545,7 +6678,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -6731,7 +6864,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50, y: -382}
+  m_AnchoredPosition: {x: 1052.4, y: 175}
   m_SizeDelta: {x: 470, y: 104.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1686025568
@@ -8048,6 +8181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2074961851}
   - component: {fileID: 2074961852}
+  - component: {fileID: 2074961853}
   m_Layer: 5
   m_Name: MiniGame1
   m_TagString: Untagged
@@ -8083,14 +8217,25 @@ Animation:
   m_GameObject: {fileID: 2074961850}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
+  m_Animation: {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: e793766621fa96747895f272f9cb4a76, type: 2}
-  - {fileID: 7400000, guid: ec63a090f088c4844a3ebb21f77e47da, type: 2}
+  - {fileID: 7400000, guid: 73461284887933640985a56e2486615f, type: 2}
+  - {fileID: 7400000, guid: f0c06b73a2569f1418122ab84e34cd9f, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!225 &2074961853
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2074961850}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2078843555
 GameObject:
   m_ObjectHideFlags: 0

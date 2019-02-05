@@ -118,15 +118,15 @@ public class UI : MonoBehaviour {
     private IEnumerator IQuitMiniGameUI()
     {
         Animation animation = miniGameItemsUI.gameObject.GetComponent<Animation>();
-        animation.Play("MiniZoomOut");
+        animation.Play("Canvas Fade Out");
 
         // play the animation on the specific mini game UI as well
         GameObject specificMiniGameObj = GameObject.Find("MiniGame" + gameNumber.ToString());
         Animation miniAnimation = specificMiniGameObj.GetComponent<Animation>();
-        miniAnimation.Play("MiniZoomOut"); // play anim on mini game specific object as well
+        miniAnimation.Play("Canvas Fade Out"); // play anim on mini game specific object as well
 
         // wait until anim stops
-        yield return new WaitUntil(() => animation.IsPlaying("MiniZoomOut") == false);
+        yield return new WaitUntil(() => animation.IsPlaying("Canvas Fade Out") == false);
 
         // enable world canvas again
         mainWorldCanvas.gameObject.SetActive(true);
