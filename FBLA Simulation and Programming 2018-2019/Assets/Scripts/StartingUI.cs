@@ -13,5 +13,10 @@ public class StartingUI : MonoBehaviour {
     {
         Application.Quit();
     }
+
+    public void LoadHowTo()
+    {
+        SceneManager.LoadScene("Info");
+    }
 	
 }
