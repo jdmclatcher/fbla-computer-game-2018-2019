@@ -16,6 +16,9 @@ NOTES
 
 just need the content really...
 
+
+dropper - add text that displays status of each action
+
 and the sounds
 plus the polish on the ending and starting UI scenes
 

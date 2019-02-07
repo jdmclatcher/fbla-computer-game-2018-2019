@@ -4,11 +4,11 @@ using UnityEngine;
 public class MiniGame3Player : MonoBehaviour {
 
     [SerializeField] private float slowMoVal;
-    private MiniGame3UI ui;
+    [SerializeField] private MiniGame3UI ui;
 
     private void Start()
     {
-        ui = FindObjectOfType<MiniGame3UI>(); // obtain ref to UI
+        // ui = FindObjectOfType<MiniGame3UI>(); // obtain ref to UI
     }
 
     private void OnTriggerEnter(Collider other)
@@ -16,9 +16,9 @@ public class MiniGame3Player : MonoBehaviour {
         if(other.tag == "Obstacle Trigger")
         { 
             Time.timeScale = slowMoVal;
-            
+            Debug.Log("1");
             // STARTS A COUROUTINE in the UI script
-            StartCoroutine(ui.IQuestion());
+            StartCoroutine(ui.IQuestion(other.gameObject));
         } 
 
     }

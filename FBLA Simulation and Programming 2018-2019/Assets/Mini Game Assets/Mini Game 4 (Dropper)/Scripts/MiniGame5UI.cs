@@ -93,6 +93,7 @@ public class MiniGame5UI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI livesCounter;
     [SerializeField] private TextMeshProUGUI repPointsText;
     [SerializeField] private GameObject gameEndScreen;
+    [SerializeField] private TextMeshProUGUI numMissedText;
 
     public void AddCorrect()
     {
@@ -146,6 +147,8 @@ public class MiniGame5UI : MonoBehaviour
 
         gameEndScreen.SetActive(true);
         repPointsText.text = repPoints.ToString();
+
+        numMissedText.text = errorCount.ToString(); // get total number missed
 
         PlayerPrefs.SetInt("Rep Points", PlayerPrefs.GetInt("Rep Points") + repPoints);
 

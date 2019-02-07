@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class DropperPlayerController : MonoBehaviour {
 
@@ -14,11 +15,14 @@ public class DropperPlayerController : MonoBehaviour {
 
     [SerializeField] private MiniGame5UI ui;
 
+    [SerializeField] private GameObject correctText;
+    [SerializeField] private GameObject incorrectText;
+    [SerializeField] private Transform responsesPos;
+
     private void Start()
     {
         // ui = FindObjectOfType<MiniGame5UI>();
         IWaitForCountdown();
-        
     }
 
     private void Update () {
@@ -60,6 +64,17 @@ public class DropperPlayerController : MonoBehaviour {
         {
             Debug.Log("That's correct!");
             ui.AddCorrect(); // add rep points
+
+            //if (!correctText.activeInHierarchy)
+            //{
+            //    // turn on indicator - correct
+            //    correctText.SetActive(true);
+            //}
+
+            Instantiate(correctText, responsesPos.position, responsesPos.rotation, responsesPos);
+
+            
+
             // spawn in check mark at object postion
             Instantiate(checkMark, other.transform.position, other.transform.rotation);
             // destroy the object
@@ -69,6 +84,17 @@ public class DropperPlayerController : MonoBehaviour {
         {
             Debug.Log("Incorrect.");
             ui.AddError(); // calls function that will add 1 to the total errors
+
+            //if (!incorrectText.activeInHierarchy)
+            //{
+            //    // turn on indicator - incorrect
+            //    incorrectText.SetActive(true);
+            //}
+
+            Instantiate(incorrectText, responsesPos.position, responsesPos.rotation, responsesPos);
+
+
+
             // spawn in X mark at object postion
             Instantiate(xMark, other.transform.position, other.transform.rotation);
             // destroy the object

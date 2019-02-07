@@ -28,9 +28,6 @@ public class MiniGame3UI : MonoBehaviour {
     // Player will play all the questions each time, 
     // but will only get a chance at each one once per run
 
-
-    // TODO add more questions
-    //  these questions need to be about running for office, candidacy, etc..
     
     #region Countdown
 
@@ -106,6 +103,10 @@ public class MiniGame3UI : MonoBehaviour {
     [SerializeField] private RectTransform checkXSpawnPos;
     [SerializeField] private GameObject check;
     [SerializeField] private GameObject x;
+    [SerializeField] private GameObject obstacleExplodeEffectRED;
+    [SerializeField] private GameObject obstacleExplodeEffectGREEN;
+
+    [SerializeField] private bool[] questionNumSeen;
 
     // private vars hidden in inspector
     private int repPoints = 0;
@@ -113,19 +114,32 @@ public class MiniGame3UI : MonoBehaviour {
     private bool hasChosen = false;
     private int questionsSeen = 0;
 
+    private int rand;
 
     // activates a random question from the array
     private void Question()
     {
-        int rand = Random.Range(0, questions.Length); // random number
+        RandomNum(); // get a valid random num
         for (int i = 0; i < questions.Length; i++)
         {
             if(i == rand)
             {
                 questions[i].SetActive(true);
+                questionNumSeen[i] = true; // set current question seen as true
             }
         }
         questionsSeen++; // increase the count of questions encountered
+    }
+
+    // recursive function that will keep getting a random number until
+    // the random number matches a question not seen before
+    public void RandomNum()
+    {
+        rand = Random.Range(0, questions.Length);
+        if (questionNumSeen[rand] == true) // if the question has been seen before, re-roll
+        {
+            RandomNum(); // recursive to keep calling til get good answer
+        }
     }
 
     // deactivates all the active questions in the array
@@ -155,20 +169,19 @@ public class MiniGame3UI : MonoBehaviour {
         correct = false;
     }
 
-    public IEnumerator IQuestion()
+    public IEnumerator IQuestion(GameObject obstacle)
     {
         Question();
 
         // waits until hasChosen is true
         yield return new WaitUntil(() => hasChosen == true);
-
-        // TODO verification of correct answer
-        // all the others turn red, and one turns green
+        
         if (correct)
         {
             // TODO anims for get right
             // object explodes in a green mess
 
+            // Instantiate(correctParticle, obstacle.transform.position, obstacle.transform.rotation); // spawn in good particle
             questionsCorrect++; // increase number of questions 
             repPoints += pointsPerQuestion;
             Time.timeScale = 1f; // revert out of slow-mo
@@ -191,13 +204,42 @@ public class MiniGame3UI : MonoBehaviour {
 
         // if the number of questions the player has seen equals the max amount of questions,
         // spawn in the finish line to finish the game
-        if(questionsSeen == questions.Length)
+
+
+        if (questionsSeen == questions.Length)
         {
             obstacleSpawningStopped = true; // stops the flow of the obstacles
             Instantiate(finishLine, finishLineSpawnPoint.position, finishLineSpawnPoint.rotation, finishLineSpawnPoint);
         }
     }
     
+    // TODO fix this
+    // called from ObstacleController
+    public void HitObstacle(GameObject theObstacle)
+    {
+        //Animation theObstacleAnim = theObstacle.GetComponent<Animation>(); // get ref to animator
+        //theObstacleAnim.Play("Hit Player"); // play animation on obstacle
+
+        //yield return new WaitUntil(() => theObstacleAnim.IsPlaying("Hit Player") == false); // wait until no longer playing anim
+
+        // spawn blow up effect
+
+        // theObstacle.SetActive(false); // then disable the object
+        
+        // TOFIX - this is a mess
+        //if (!correct)
+        //{
+        //    Instantiate(obstacleExplodeEffectRED, theObstacle.transform.position, theObstacle.transform.rotation);
+        //    IncorrectAnswer(); // call incorrect asnwer to deduct points
+        //    hasChosen = false; // reset bool
+        //} else
+        //{
+        //    Instantiate(obstacleExplodeEffectGREEN, theObstacle.transform.position, theObstacle.transform.rotation);
+        //    // correct answer function already called
+        //}
+        
+    }
+
     // called from the finish line controller script
     public void GameCompleted()
     {

@@ -5,8 +5,11 @@ public class ObstacleController : MonoBehaviour {
     // move speed of the obstacle
     [SerializeField] private float moveSpeed;
 
+    [SerializeField] private MiniGame3UI ui;
+
     private void Update()
     {
+        ui = FindObjectOfType<MiniGame3UI>(); // get ref to game UI
         // move the object at constant speed
         transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
     }
@@ -22,7 +25,8 @@ public class ObstacleController : MonoBehaviour {
         // WARNING this will run regardless of if the user gets it correct or not
         if(other.tag == "Player")
         {
-            // TODO play an animation or something
+            ui.HitObstacle(gameObject); // call function on UI script, passed in itself
+            
             Debug.Log("Hello, player.");
         }
     }
