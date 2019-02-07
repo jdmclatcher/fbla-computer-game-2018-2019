@@ -189,7 +189,6 @@ public class MiniGame3UI : MonoBehaviour {
         }
         else
         {
-            // TODO anims for get wrong
             // ui will show as incorrect but the block will still hit the person
             Time.timeScale = 1f; // revert out of slow-mo
             Debug.Log("Incorrect.");
@@ -197,10 +196,6 @@ public class MiniGame3UI : MonoBehaviour {
         }
 
         DeactivateAllQuestions(); // deactivate all the currently active questions
-
-        // reset booleans
-        correct = false;
-        hasChosen = false;
 
         // if the number of questions the player has seen equals the max amount of questions,
         // spawn in the finish line to finish the game
@@ -213,30 +208,29 @@ public class MiniGame3UI : MonoBehaviour {
         }
     }
     
-    // TODO fix this
-    // called from ObstacleController
     public void HitObstacle(GameObject theObstacle)
     {
-        //Animation theObstacleAnim = theObstacle.GetComponent<Animation>(); // get ref to animator
-        //theObstacleAnim.Play("Hit Player"); // play animation on obstacle
+        Debug.Log(correct);
+        if (!correct)
+        {
+            Instantiate(obstacleExplodeEffectRED, theObstacle.transform.position, theObstacle.transform.rotation);
+            IncorrectAnswer(); // call incorrect asnwer to deduct points
+            hasChosen = false; // reset bool
+            correct = false;
+        }
+        else
+        {
+            Instantiate(obstacleExplodeEffectGREEN, theObstacle.transform.position, theObstacle.transform.rotation);
+            // correct answer function already called
+            hasChosen = false;
+            correct = false;
+        }
 
-        //yield return new WaitUntil(() => theObstacleAnim.IsPlaying("Hit Player") == false); // wait until no longer playing anim
+        theObstacle.SetActive(false); // deactivate clone
+        Time.timeScale = 1f;
+        DeactivateAllQuestions();
 
-        // spawn blow up effect
-
-        // theObstacle.SetActive(false); // then disable the object
         
-        // TOFIX - this is a mess
-        //if (!correct)
-        //{
-        //    Instantiate(obstacleExplodeEffectRED, theObstacle.transform.position, theObstacle.transform.rotation);
-        //    IncorrectAnswer(); // call incorrect asnwer to deduct points
-        //    hasChosen = false; // reset bool
-        //} else
-        //{
-        //    Instantiate(obstacleExplodeEffectGREEN, theObstacle.transform.position, theObstacle.transform.rotation);
-        //    // correct answer function already called
-        //}
         
     }
 
@@ -259,7 +253,6 @@ public class MiniGame3UI : MonoBehaviour {
     }
 
     #endregion
-
 
     #region ObstacleSpawner
 
