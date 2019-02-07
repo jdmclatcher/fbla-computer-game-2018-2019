@@ -38,13 +38,19 @@ public class Player : MonoBehaviour {
     [Header("Attached Objects")]
     [SerializeField] private GameObject backupCamera;
 
+    [Header("UI")]
+    [SerializeField] private GameObject needMoreSup1Text;
+    [SerializeField] private GameObject needMoreSup2Text;
+
     #region Start and Update
 
     // Use this for initialization
     void Start()
     {
+        needMoreSup1Text.SetActive(false); // disable message by default
+        needMoreSup2Text.SetActive(false); // disable message by default
         // TEMP reset playerprefs on scene enter
-        // ResetPrefs(); // resets everything, so it will always be the first time playing
+        ResetPrefs(); // resets everything, so it will always be the first time playing
 
 
         // Finds the UI component in the scene
@@ -174,6 +180,7 @@ public class Player : MonoBehaviour {
                     StartCoroutine(ui.OpenTheGate1()); // go to next level
                 } else
                 {
+                    needMoreSup1Text.SetActive(true);
                     // TODO give a helpful message of rejection
                     Debug.Log("You need to gather more supporters.");
                 }
@@ -189,6 +196,7 @@ public class Player : MonoBehaviour {
                 }
                 else
                 {
+                    needMoreSup2Text.SetActive(true);
                     Debug.Log("You need to get more supporters.");
                 }
                 break;
@@ -346,8 +354,8 @@ public class Player : MonoBehaviour {
     // reset playerprefs rep points value
     private void ResetPrefs()
     {
-        PlayerPrefs.SetInt("Rep Points", 0);
-        PlayerPrefs.SetInt("Supporters", 0);
+        // PlayerPrefs.SetInt("Rep Points", 0);
+        // PlayerPrefs.SetInt("Supporters", 0);
         PlayerPrefs.SetFloat("xLOC", startPosition.position.x);
         PlayerPrefs.SetFloat("yLOC", startPosition.position.y);
         PlayerPrefs.SetFloat("zLOC", startPosition.position.z);

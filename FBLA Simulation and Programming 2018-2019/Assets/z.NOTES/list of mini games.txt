@@ -16,14 +16,13 @@ NOTES
 
 just need the content really...
 
+add content to box matcher
 
-dropper - add text that displays status of each action
+game balance
 
-and the sounds
 plus the polish on the ending and starting UI scenes
 
 ... and the models
-
 
 
 BUGS:

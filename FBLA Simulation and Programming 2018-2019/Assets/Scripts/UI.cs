@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+// using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour {
 
