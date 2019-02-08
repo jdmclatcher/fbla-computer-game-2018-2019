@@ -8,11 +8,6 @@ public class BoxPlayerController : MonoBehaviour {
     private float walkY;
 
     #region Start and Update
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
         if (!restrained)
