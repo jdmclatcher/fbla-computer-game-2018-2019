@@ -18,6 +18,8 @@ just need the content really...
 
 add content to box matcher
 
+change color of UI star
+
 game balance
 
 plus the polish on the ending and starting UI scenes

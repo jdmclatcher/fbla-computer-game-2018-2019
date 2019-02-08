@@ -473,6 +473,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desiredTagNum: 1
   UI: {fileID: 2118961850}
+  boxPoofParticle: {fileID: 1367091207846340, guid: 32d55aaef4c95b84083f908c7d619f89,
+    type: 2}
 --- !u!1 &250217797
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,8 +514,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3099647, y: 1.0087603, z: 1.2856416}
-  m_Center: {x: -0.520445, y: -0.0043806545, z: 0.039956927}
+  m_Size: {x: 0.41835338, y: 1.0087603, z: 1.2856416}
+  m_Center: {x: -0.38314182, y: -0.0043806545, z: 0.039956927}
 --- !u!1 &251655807
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,6 +709,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desiredTagNum: 3
   UI: {fileID: 2118961850}
+  boxPoofParticle: {fileID: 1367091207846340, guid: 32d55aaef4c95b84083f908c7d619f89,
+    type: 2}
 --- !u!23 &263297067
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2408,6 +2412,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desiredTagNum: 2
   UI: {fileID: 2118961850}
+  boxPoofParticle: {fileID: 1367091207846340, guid: 32d55aaef4c95b84083f908c7d619f89,
+    type: 2}
 --- !u!23 &559148060
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3994,7 +4000,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1023776275}
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: -1.0900002, y: 2, z: -0.91}
+  m_LocalPosition: {x: -1.0900002, y: 1.82, z: -0.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1961113708}
@@ -4471,8 +4477,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.31584483, y: 0.9144929, z: 1.3222347}
-  m_Center: {x: -0.52338517, y: 0.0427531, z: -0.007560632}
+  m_Size: {x: 0.4492762, y: 0.9144929, z: 1.3089468}
+  m_Center: {x: -0.26760286, y: 0.0427531, z: -0.014204661}
 --- !u!1001 &1247207448
 Prefab:
   m_ObjectHideFlags: 0
@@ -4688,6 +4694,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desiredTagNum: 2
   UI: {fileID: 2118961850}
+  boxPoofParticle: {fileID: 1367091207846340, guid: 32d55aaef4c95b84083f908c7d619f89,
+    type: 2}
 --- !u!54 &1255993404
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4892,8 +4900,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.494508, y: 0.494509, z: 0.494508}
-  m_Center: {x: -0.104342, y: 0.2362205, z: 0.053504005}
+  m_Size: {x: 0.5049241, y: 0.49450907, z: 0.494508}
+  m_Center: {x: -0.09913395, y: 0.23622052, z: 0.05350399}
 --- !u!114 &1320349669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4907,6 +4915,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desiredTagNum: 2
   UI: {fileID: 2118961850}
+  boxPoofParticle: {fileID: 1367091207846340, guid: 32d55aaef4c95b84083f908c7d619f89,
+    type: 2}
 --- !u!23 &1320349670
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6126,6 +6136,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desiredTagNum: 1
   UI: {fileID: 2118961850}
+  boxPoofParticle: {fileID: 1367091207846340, guid: 32d55aaef4c95b84083f908c7d619f89,
+    type: 2}
 --- !u!23 &1564405050
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6917,6 +6929,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desiredTagNum: 2
   UI: {fileID: 2118961850}
+  boxPoofParticle: {fileID: 1367091207846340, guid: 32d55aaef4c95b84083f908c7d619f89,
+    type: 2}
 --- !u!23 &1741908693
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7794,7 +7808,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1876882307}
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: -1, y: 2, z: -8.27}
+  m_LocalPosition: {x: -1, y: 1.82, z: -8.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1220253791}
@@ -7991,6 +8005,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desiredTagNum: 1
   UI: {fileID: 2118961850}
+  boxPoofParticle: {fileID: 1367091207846340, guid: 32d55aaef4c95b84083f908c7d619f89,
+    type: 2}
 --- !u!23 &1890976286
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8373,8 +8389,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.37881422, y: 0.9144929, z: 1.3432617}
-  m_Center: {x: -0.5548699, y: 0.0427531, z: 0.016889334}
+  m_Size: {x: 0.3121084, y: 0.9144929, z: 1.3055078}
+  m_Center: {x: -0.34456798, y: 0.0427531, z: -0.0019876678}
 --- !u!1 &2039369910
 GameObject:
   m_ObjectHideFlags: 0
@@ -8403,7 +8419,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2039369910}
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: -1.3099995, y: 1.85, z: 7.49}
+  m_LocalPosition: {x: -1.3099995, y: 1.84, z: 7.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 250217798}
@@ -8625,9 +8641,9 @@ MonoBehaviour:
   countdown: {fileID: 447291101}
   curtain: {fileID: 289719431}
   thePlayer: {fileID: 251655813}
-  totalBoxes: 4
+  totalBoxes: 8
   startingRepPoints: 300
-  pointsLostPerSecond: 1
+  pointsLostPerSecond: 2
   boxesLeftText: {fileID: 849904365}
   timeElapsedText: {fileID: 1472225634}
   gameEndScreen: {fileID: 867639949}

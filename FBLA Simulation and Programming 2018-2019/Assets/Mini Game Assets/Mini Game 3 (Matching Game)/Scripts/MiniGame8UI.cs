@@ -7,7 +7,6 @@ using TMPro;
 public class MiniGame8UI : MonoBehaviour {
 
     /*
-     * TODO make easy mini game
      * 
      * matching game - terms on the left and defs on the right
      * 
@@ -134,8 +133,12 @@ public class MiniGame8UI : MonoBehaviour {
 
     private void GameEnd()
     {
-        // TODO activate game end screen
         // update texts
+        // can't have negative rep points
+        if(repPoints < 0)
+        {
+            repPoints = 0;
+        }
         numberMissedText.text = numberIncorrect.ToString();
         repPointText.text = repPoints.ToString();
         gameEndScreen.SetActive(true); // set the end screen active
