@@ -14,17 +14,16 @@ STAGE 2
 
 NOTES
 
-just need the content really...
+add BG to mini game 1
+add BG to mini game 2
 
-add content to box matcher
-
-change color of UI star
+lighting
 
 game balance
 
-plus the polish on the ending and starting UI scenes
+polish on the ending and starting UI scenes
 
-... and the models
+models
 
 
 BUGS:
