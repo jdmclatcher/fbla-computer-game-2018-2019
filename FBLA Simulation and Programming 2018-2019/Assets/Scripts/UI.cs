@@ -18,14 +18,13 @@ public class UI : MonoBehaviour {
     // TOFIX only the main mini game items are getting the exit animation
     
     [SerializeField] private TextMeshProUGUI supportersText;
-    public int supportersToFinish1;
-    public int supportersToFinish2;
 
     [SerializeField] private GameObject wall1;
     [SerializeField] private GameObject wall2;
 
     [SerializeField] private GameObject pauseUI;
     private bool isPaused; // check if game is paused or not
+    [SerializeField] private Player thePlayer; // ref to player
 
     #region Start and Update
     private void Start()
@@ -94,6 +93,7 @@ public class UI : MonoBehaviour {
 
     // sub UIs - Array List
     [SerializeField] private List<GameObject> miniGames;
+    // [SerializeField] private bool[] miniGamesPlayed; // track progress
 
     // important object that will load scene after animation is played
     [SerializeField] private OpenSceneAfterTime curtainController;
@@ -103,7 +103,7 @@ public class UI : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI repPointsText;
     private int repPoints;
 
-    public bool freeToMove = false;
+    // public bool freeToMove = false;
     [HideInInspector] public int gameNumber;
 
     [Header("Mini Game Main Stats")]
@@ -114,9 +114,11 @@ public class UI : MonoBehaviour {
 
     [Header("Extras")]
     [SerializeField] private GameObject miniGameItemsUI; // for anims
+    public GameObject alreadyPlayedWarning;
 
     public void ShowMiniGameUI()
     { 
+
         Cursor.visible = true; // show the cursor
         // disable world canvas
         mainWorldCanvas.gameObject.SetActive(false);
@@ -143,9 +145,32 @@ public class UI : MonoBehaviour {
 
     // loads RANDOM mini-game scene
     public void TransitionMiniGameScenes()
-    {
-        // load specified scene from curtain object
+    { 
+        // update playerprefs
+        PlayerPrefs.SetInt("Games Played", PlayerPrefs.GetInt("Games Played") + 1);
+
+        // set that it has been played
+        SetPlayed(gameNumber);
+
+        // load specified scene from curtain 
         curtainController.SetStuff(miniGameScene + gameNumber.ToString());
+        Debug.Log(PlayerPrefs.GetInt("Game" + gameNumber + 1));
+    }
+
+    public bool CheckPlayed(int gameNumber)
+    {
+        // checks if game has been played
+        if(PlayerPrefs.GetInt("Game" + gameNumber + 1) == 1)
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private void SetPlayed(int gameNumber)
+    {
+        PlayerPrefs.SetInt("Game" + gameNumber + 1, 1); // set correct mini game played to true
     }
 
     // when the player presses the QUIT option
@@ -179,7 +204,8 @@ public class UI : MonoBehaviour {
 
         // disable main UI after
         miniGameUI.SetActive(false);
-        freeToMove = true;
+        // freeToMove = true;
+        thePlayer.restrained = false; // can move
     }
 
 

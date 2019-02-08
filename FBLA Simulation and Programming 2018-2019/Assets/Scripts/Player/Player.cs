@@ -22,7 +22,7 @@ public class Player : MonoBehaviour {
     private float walkY;
 
     // check if player can move, defaults to false
-    [SerializeField] private bool restrained;
+    public bool restrained;
 
     [SerializeField] private float collisionRestrainDuration; // amount of time to be stunned for
 
@@ -39,22 +39,18 @@ public class Player : MonoBehaviour {
     [SerializeField] private GameObject backupCamera;
 
     [Header("UI")]
-    [SerializeField] private GameObject needMoreSup1Text;
-    [SerializeField] private GameObject needMoreSup2Text;
+    [SerializeField] private GameObject needMoreGamesText;
+    [SerializeField] private RectTransform messageSpawnPoint;
 
     #region Start and Update
 
     // Use this for initialization
     void Start()
     {
-        needMoreSup1Text.SetActive(false); // disable message by default
-        needMoreSup2Text.SetActive(false); // disable message by default
         // TEMP reset playerprefs on scene enter
-        ResetPrefs(); // resets everything, so it will always be the first time playing
+        // ResetPrefs(); // resets everything, so it will always be the first time playing
 
 
-        // Finds the UI component in the scene
-        // ui = FindObjectOfType<UI>();
         Cursor.visible = false;
         restrained = false;
         // multiplier to reduce (using division) the X movement (side to side) 
@@ -113,16 +109,6 @@ public class Player : MonoBehaviour {
             // from movement functions
             transform.Rotate(0, calculateRotation(), 0);
             transform.Translate(calculateXMovement(), 0, calculateYMovement());
-
-            // BROKEN...
-            // only activates the "backup camera" if the player is moving backwards
-            //if (walkY < 0)
-            //{
-            //    backupCamera.gameObject.GetComponent<BoxCollider>().enabled = true;
-            //} else
-            //{
-            //    backupCamera.gameObject.GetComponent<BoxCollider>().enabled = false;
-            //}
         }
 
         
@@ -172,36 +158,32 @@ public class Player : MonoBehaviour {
                 break;
             // wall checks
             case "Wall/1":
-                // if player has correct amount of supporters, they can pass through
-                if (PlayerPrefs.GetInt("Supporters") >= ui.supportersToFinish1)
+                // if player has correct amount of games played, they can pass through
+                if (PlayerPrefs.GetInt("Games Played") >= 3)
                 {
-                    // TODO open the gate!
                     Debug.Log("Congrats! You can move on now.");
                     StartCoroutine(ui.OpenTheGate1()); // go to next level
                 } else
                 {
-                    needMoreSup1Text.SetActive(true);
-                    // TODO give a helpful message of rejection
+                    Instantiate(needMoreGamesText, messageSpawnPoint.transform.position, messageSpawnPoint.transform.rotation, messageSpawnPoint);
                     Debug.Log("You need to gather more supporters.");
                 }
                 break;
             case "Wall/2":
                 // WIN THE GAME
-                // if player has correct amount of supporters, they can pass through
-                if (PlayerPrefs.GetInt("Supporters") >= ui.supportersToFinish2)
+                // if player has correct amount of games played, they can pass through
+                if (PlayerPrefs.GetInt("Games Played") >= (3 + 4))
                 {
-                    // TODO win the game
                     Debug.Log("Congrats! You have completed the game!");
                     StartCoroutine(ui.OpenTheGate2()); // (win the game)
                 }
                 else
                 {
-                    needMoreSup2Text.SetActive(true);
+                    Instantiate(needMoreGamesText, messageSpawnPoint.transform.position, messageSpawnPoint.transform.rotation, messageSpawnPoint);
                     Debug.Log("You need to get more supporters.");
                 }
                 break;
             case "The End":
-                ResetPrefs(); // confirmed the end, so reset all player prefs and values
                 ui.fadeToBlack.SetActive(true); // start the fade
 
                 break;
@@ -215,31 +197,40 @@ public class Player : MonoBehaviour {
     {
         // calls function on the UI script to handle scene transition
         ui.gameNumber = gameNumber; // define the game number in the ui script
+
+
         if (!respawnInvincible)
         {
             // Debug.Log("Ok, transitioning to the Mini-Game");
+            // check for if played
+            if (ui.CheckPlayed(ui.gameNumber) == true)
+            {
+                Instantiate(ui.alreadyPlayedWarning, messageSpawnPoint.transform.position, messageSpawnPoint.transform.rotation, messageSpawnPoint);
+                ui.alreadyPlayedWarning.SetActive(true);
+                return; // quit out of the function
+            }
             ui.ShowMiniGameUI(); 
-            ui.freeToMove = false;
+            // ui.freeToMove = false;
             restrained = true; // so the player can't move around while in the menu
-        }
+        } 
 
         // Save location using PlayerPrefs for respawning ... 
         SaveLocation();
         SaveRotation();
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        // only keeps player restrained if they have not
-        // pressed the quit button
-        if(other.tag == "MiniGame/" + ui.gameNumber)
-        {
-            if (ui.freeToMove)
-            {
-                restrained = false;
-            }
-        }
-    }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    // only keeps player restrained if they have not
+    //    // pressed the quit button
+    //    if(other.tag == "MiniGame/" + ui.gameNumber)
+    //    {
+    //        if (ui.freeToMove)
+    //        {
+    //            restrained = false;
+    //        }
+    //    }
+    //}
 
     private void OnTriggerExit(Collider other)
     {
@@ -351,15 +342,18 @@ public class Player : MonoBehaviour {
 
     #region TEMP UTIL
 
+    // TEMP
     // reset playerprefs rep points value
     private void ResetPrefs()
     {
         // PlayerPrefs.SetInt("Rep Points", 0);
         // PlayerPrefs.SetInt("Supporters", 0);
-        PlayerPrefs.SetFloat("xLOC", startPosition.position.x);
-        PlayerPrefs.SetFloat("yLOC", startPosition.position.y);
-        PlayerPrefs.SetFloat("zLOC", startPosition.position.z);
-        PlayerPrefs.SetInt("First Time", 0);
+        //PlayerPrefs.SetFloat("xLOC", startPosition.position.x);
+        //PlayerPrefs.SetFloat("yLOC", startPosition.position.y);
+        //PlayerPrefs.SetFloat("zLOC", startPosition.position.z);
+        //PlayerPrefs.SetInt("First Time", 0);
+        //PlayerPrefs.SetInt("Games Played", 0);
+        PlayerPrefs.DeleteAll();
     }
 
     #endregion

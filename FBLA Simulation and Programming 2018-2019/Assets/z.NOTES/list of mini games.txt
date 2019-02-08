@@ -19,11 +19,11 @@ add BG to mini game 2
 
 lighting
 
-game balance
 
-polish on the ending and starting UI scenes
+
 
 models
 
 
 BUGS:
+
