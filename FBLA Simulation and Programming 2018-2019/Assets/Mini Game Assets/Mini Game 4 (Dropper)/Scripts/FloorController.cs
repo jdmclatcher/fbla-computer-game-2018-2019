@@ -20,7 +20,7 @@ public class FloorController : MonoBehaviour {
             Debug.Log("Oh no! You missed one.");
             ui.AddError(); // calls function that will add 1 to the total errors
             // spawn in X mark at object postion
-            Instantiate(xMark, other.transform.position, other.transform.rotation);
+            Instantiate(xMark, new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z - 0.1f), other.transform.rotation);
 
             // only activate if not already visible
             //if (!incorrectText.activeInHierarchy)
@@ -44,7 +44,7 @@ public class FloorController : MonoBehaviour {
             Debug.Log("Good job. You avoided that one.");
             ui.AddCorrect(); // add rep points
             // spawn in check mark at object postion
-            Instantiate(checkMark, other.transform.position, other.transform.rotation);
+            Instantiate(checkMark, new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z - 0.1f), other.transform.rotation);
             //if (!correctText.activeInHierarchy)
             //{
             //    // turn on indicator - correct

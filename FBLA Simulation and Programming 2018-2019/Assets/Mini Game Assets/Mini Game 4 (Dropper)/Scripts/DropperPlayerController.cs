@@ -21,6 +21,7 @@ public class DropperPlayerController : MonoBehaviour {
 
     private Animator animator;
 
+
     private void Start()
     {
         animator = GetComponent<Animator>(); // get ref to animator
@@ -86,10 +87,10 @@ public class DropperPlayerController : MonoBehaviour {
 
             Instantiate(correctText, responsesPos.position, responsesPos.rotation, responsesPos);
 
-            
+
 
             // spawn in check mark at object postion
-            Instantiate(checkMark, other.transform.position, other.transform.rotation);
+            Instantiate(checkMark, new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z - 0.1f), other.transform.rotation);
             // destroy the object
             Destroy(other.gameObject);
         }
@@ -109,7 +110,7 @@ public class DropperPlayerController : MonoBehaviour {
 
 
             // spawn in X mark at object postion
-            Instantiate(xMark, other.transform.position, other.transform.rotation);
+            Instantiate(xMark, new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z - 0.1f), other.transform.rotation);
             // destroy the object
             Destroy(other.gameObject);
         }
