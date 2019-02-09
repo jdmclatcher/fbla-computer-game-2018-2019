@@ -19,8 +19,11 @@ public class DropperPlayerController : MonoBehaviour {
     [SerializeField] private GameObject incorrectText;
     [SerializeField] private Transform responsesPos;
 
+    private Animator animator;
+
     private void Start()
     {
+        animator = GetComponent<Animator>(); // get ref to animator
         // ui = FindObjectOfType<MiniGame5UI>();
         IWaitForCountdown();
     }
@@ -32,8 +35,18 @@ public class DropperPlayerController : MonoBehaviour {
         if (canMove)
         {
             transform.Translate(calculateXMovement(), 0, 0);
+            
+            // if moving, say so in animator to switch anim states
+            if (Mathf.Abs(calculateXMovement()) > 0)
+            {
+                animator.SetBool("running", true);
+            }
+            else
+            {
+                animator.SetBool("running", false); // set running to false if no movement is detected
+            }
         }
-
+        
         
     }
 

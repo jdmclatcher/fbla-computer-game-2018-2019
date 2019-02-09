@@ -45,7 +45,6 @@ public class FloorController : MonoBehaviour {
             ui.AddCorrect(); // add rep points
             // spawn in check mark at object postion
             Instantiate(checkMark, other.transform.position, other.transform.rotation);
-
             //if (!correctText.activeInHierarchy)
             //{
             //    // turn on indicator - correct
