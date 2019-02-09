@@ -10407,7 +10407,7 @@ MonoBehaviour:
   instructionsText: {fileID: 2121280356}
   waitInterval: 0.2
   gameUI: {fileID: 346668854}
-  repPointsToAdd: 100
+  repPointsToAdd: 200
   gameEnd: {fileID: 413382201}
   repPointsText: {fileID: 394123069}
   questionResultText: {fileID: 1054415434}

@@ -4518,7 +4518,7 @@ MonoBehaviour:
   spawner: {fileID: 181041151}
   errorCount: 0
   maxErrors: 3
-  repPointsPerAnswer: 10
+  repPointsPerAnswer: 20
   repPointsPerExtraLife: 50
   objectsLength: 0
   livesCounter: {fileID: 2136111623}

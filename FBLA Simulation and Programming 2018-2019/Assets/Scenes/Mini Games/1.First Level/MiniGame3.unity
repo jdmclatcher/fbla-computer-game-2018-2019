@@ -8876,8 +8876,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdown: {fileID: 447291101}
   curtain: {fileID: 1570822713}
-  pointsLostPerWrong: 10
-  totalStartingPoints: 300
+  pointsLostPerWrong: 50
+  totalStartingPoints: 400
   correctVals: 020000000100000000000000030000000500000004000000
   gameStuff: {fileID: 585549133}
   dropdowns:

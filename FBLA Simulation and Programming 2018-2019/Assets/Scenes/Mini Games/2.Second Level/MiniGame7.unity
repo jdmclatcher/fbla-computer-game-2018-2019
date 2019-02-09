@@ -12228,7 +12228,7 @@ MonoBehaviour:
   correctText: {fileID: 1684196592}
   gameCompletedScreen: {fileID: 1580033696}
   repPointsText: {fileID: 2089382786}
-  pointsPerQuestion: 20
+  pointsPerQuestion: 50
   checkXSpawnPos: {fileID: 1779387579}
   check: {fileID: 1517879629217126, guid: e64d758f5a9e32142b9c2cc0cd88bd93, type: 2}
   x: {fileID: 1894709462172868, guid: 8f48544a35d2f334d897b09dc2f7b280, type: 2}

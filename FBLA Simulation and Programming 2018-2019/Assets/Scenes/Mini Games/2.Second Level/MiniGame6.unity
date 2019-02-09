@@ -3351,8 +3351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0309346c53962ac4fa8fe078840fb550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsPerResponse: 5
-  gameTime: 45
+  pointsPerResponse: 25
+  gameTime: 60
   spawnParent: {fileID: 807486139}
   acronyms:
   - {fileID: 1912697850047158, guid: b594ffca2960025449e4ad188056ef47, type: 2}
