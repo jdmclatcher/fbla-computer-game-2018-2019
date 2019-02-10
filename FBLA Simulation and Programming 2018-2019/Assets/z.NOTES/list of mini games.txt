@@ -17,20 +17,13 @@ NOTES
 add BG to mini game 1
 add BG to mini game 2
 
-lighting
 
+box matcher needs new anims
 
-
-
-models
 
 
 BUGS:
 
-fix collision - make colliders fatter
-
-fix not interacting on first run and fixrst collide
-
-fix area light
-
 fix stunning animation
+
+add walls back into min game 5
