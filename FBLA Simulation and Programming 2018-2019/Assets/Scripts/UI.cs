@@ -98,7 +98,7 @@ public class UI : MonoBehaviour {
     private int repPoints;
 
     // public bool freeToMove = false;
-    [HideInInspector] public int gameNumber;
+    [HideInInspector] public int gameNumber = 0;
 
     [Header("Mini Game Main Stats")]
     [SerializeField] private TextMeshProUGUI repPointsMainText;
@@ -295,8 +295,6 @@ public class UI : MonoBehaviour {
         endingCamera.enabled = false;
 
     }
-
-    
 
     #endregion
 

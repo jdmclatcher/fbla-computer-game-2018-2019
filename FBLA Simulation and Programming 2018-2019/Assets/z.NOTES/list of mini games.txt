@@ -29,6 +29,8 @@ BUGS:
 
 fix collision - make colliders fatter
 
+fix not interacting on first run and fixrst collide
+
 fix area light
 
 fix stunning animation

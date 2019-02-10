@@ -36,7 +36,8 @@ public class Player : MonoBehaviour {
     [Header("UI")]
     [SerializeField] private GameObject needMoreGamesText;
     [SerializeField] private RectTransform messageSpawnPoint;
-
+    [SerializeField] private GameObject curtain1Arrow;
+    [SerializeField] private GameObject curtain2Arrow;
 
     [Header("Ending")]
     [SerializeField] private GameObject wall1;
@@ -47,6 +48,7 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        CheckPlayed();
         // TEMP reset playerprefs on scene enter
         // ResetPrefs(); // resets everything, so it will always be the first time playing
 
@@ -122,6 +124,22 @@ public class Player : MonoBehaviour {
 
         
     }
+
+    // check how many played and set arrow indicators accordingly
+    private void CheckPlayed()
+    {
+        if(PlayerPrefs.GetInt("Games Played") == 3)
+        {
+            curtain1Arrow.SetActive(true); // set indicator active
+        } else if (PlayerPrefs.GetInt("Games Played") == (3 + 4))
+        {
+            curtain2Arrow.SetActive(true); // set indicator active
+        } else
+        {
+            Debug.Log("nothing to display.");
+        }
+    }
+
     #endregion
 
     #region Collision
@@ -174,6 +192,7 @@ public class Player : MonoBehaviour {
                 {
                     Debug.Log("Congrats! You can move on now.");
                     StartCoroutine(ui.OpenTheGate(wall1)); // go to next level
+                    curtain1Arrow.SetActive(false); // disable indicator 
                 } else
                 {
                     Instantiate(needMoreGamesText, messageSpawnPoint.transform.position, messageSpawnPoint.transform.rotation, messageSpawnPoint);
@@ -187,6 +206,7 @@ public class Player : MonoBehaviour {
                 {
                     Debug.Log("Congrats! You have completed the game!");
                     StartCoroutine(ui.OpenTheGate(wall2)); // (win the game)
+                    curtain2Arrow.SetActive(false); // disable indicator 
                 }
                 else
                 {
@@ -213,7 +233,6 @@ public class Player : MonoBehaviour {
 
         if (!respawnInvincible)
         {
-            // Debug.Log("Ok, transitioning to the Mini-Game");
             // check for if played
             if (ui.CheckPlayed(ui.gameNumber) == true)
             {
