@@ -25,9 +25,12 @@ public class UI : MonoBehaviour {
     private bool isPaused; // check if game is paused or not
     [SerializeField] private Player thePlayer; // ref to player
 
+    public bool freeToMove = false;
+
     #region Start and Update
     private void Start()
     {
+        freeToMove = false;
         fadeToBlack.SetActive(false);
         // setup cameras
         endingCamera.enabled = false;
@@ -90,7 +93,6 @@ public class UI : MonoBehaviour {
 
     // sub UIs - Array List
     [SerializeField] private List<GameObject> miniGames;
-    // [SerializeField] private bool[] miniGamesPlayed; // track progress
 
     // important object that will load scene after animation is played
     [SerializeField] private OpenSceneAfterTime curtainController;
@@ -114,8 +116,8 @@ public class UI : MonoBehaviour {
     public GameObject alreadyPlayedWarning;
 
     public void ShowMiniGameUI()
-    { 
-
+    {
+        freeToMove = false;
         Cursor.visible = true; // show the cursor
         // disable world canvas
         mainWorldCanvas.gameObject.SetActive(false);
@@ -178,6 +180,7 @@ public class UI : MonoBehaviour {
 
     private IEnumerator IQuitMiniGameUI()
     {
+        freeToMove = true; // free movement of the player
         Animation animation = miniGameItemsUI.gameObject.GetComponent<Animation>();
         animation.Play("Canvas Fade Out");
 

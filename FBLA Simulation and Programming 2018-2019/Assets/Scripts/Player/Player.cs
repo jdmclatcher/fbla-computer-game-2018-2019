@@ -31,6 +31,8 @@ public class Player : MonoBehaviour {
 
     [SerializeField] private Transform startPosition;
 
+    private Animator animator;
+
     [Header("UI")]
     [SerializeField] private GameObject needMoreGamesText;
     [SerializeField] private RectTransform messageSpawnPoint;
@@ -46,7 +48,10 @@ public class Player : MonoBehaviour {
     void Start()
     {
         // TEMP reset playerprefs on scene enter
-        // ResetPrefs(); // resets everything, so it will always be the first time playing
+        ResetPrefs(); // resets everything, so it will always be the first time playing
+
+        // get ref to animator in object
+        animator = gameObject.GetComponent<Animator>();
 
 
         // enable both walls
@@ -101,8 +106,18 @@ public class Player : MonoBehaviour {
         {
             // applies the rotations and translations (movement) using returned values
             // from movement functions
-            transform.Rotate(0, calculateRotation(), 0);
+            transform.Rotate(0, calculateRotation(), 0); 
             transform.Translate(calculateXMovement(), 0, calculateYMovement());
+
+            // if there is any movement, set walking to true
+            if((Mathf.Abs(calculateXMovement()) > 0) || (Mathf.Abs(calculateYMovement()) > 0))
+            {
+                animator.SetBool("walking", true);
+            } else
+            {
+                // set walking to false, if no movement
+                animator.SetBool("walking", false);
+            }
         }
 
         
@@ -113,12 +128,14 @@ public class Player : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        
         // when the player colides with a test box...
         if (other.tag == "Wall")
         {
             Debug.Log("Hey! Watch where you're going!");
             // ...stops player movement temporarily using a coroutine
             StartCoroutine(_restrain());
+            animator.SetBool("walking", false);
         }
 
         // switch statement that will validate each mini game number
@@ -189,6 +206,7 @@ public class Player : MonoBehaviour {
     
     private void Validate(int gameNumber)
     {
+        animator.SetBool("walking", false);
         // calls function on the UI script to handle scene transition
         ui.gameNumber = gameNumber; // define the game number in the ui script
 
@@ -213,18 +231,18 @@ public class Player : MonoBehaviour {
         SaveRotation();
     }
 
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    // only keeps player restrained if they have not
-    //    // pressed the quit button
-    //    if(other.tag == "MiniGame/" + ui.gameNumber)
-    //    {
-    //        if (ui.freeToMove)
-    //        {
-    //            restrained = false;
-    //        }
-    //    }
-    //}
+    private void OnTriggerStay(Collider other)
+    {
+        // only keeps player restrained if they have not
+        // pressed the quit button
+        if (other.tag == "MiniGame/" + ui.gameNumber)
+        {
+            if (ui.freeToMove)
+            {
+                restrained = false;
+            }
+        }
+    }
 
     private void OnTriggerExit(Collider other)
     {
