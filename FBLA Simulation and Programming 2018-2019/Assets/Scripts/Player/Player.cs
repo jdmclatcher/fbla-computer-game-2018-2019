@@ -42,6 +42,11 @@ public class Player : MonoBehaviour {
     [SerializeField] private GameObject needMoreGamesText;
     [SerializeField] private RectTransform messageSpawnPoint;
 
+
+    [Header("Ending")]
+    [SerializeField] private GameObject wall1;
+    [SerializeField] private GameObject wall2;
+
     #region Start and Update
 
     // Use this for initialization
@@ -50,6 +55,10 @@ public class Player : MonoBehaviour {
         // TEMP reset playerprefs on scene enter
         // ResetPrefs(); // resets everything, so it will always be the first time playing
 
+
+        // enable both walls
+        wall1.SetActive(true);
+        wall2.SetActive(true);
 
         Cursor.visible = false;
         restrained = false;
@@ -162,7 +171,7 @@ public class Player : MonoBehaviour {
                 if (PlayerPrefs.GetInt("Games Played") >= 3)
                 {
                     Debug.Log("Congrats! You can move on now.");
-                    StartCoroutine(ui.OpenTheGate1()); // go to next level
+                    StartCoroutine(ui.OpenTheGate(wall1)); // go to next level
                 } else
                 {
                     Instantiate(needMoreGamesText, messageSpawnPoint.transform.position, messageSpawnPoint.transform.rotation, messageSpawnPoint);
@@ -175,7 +184,7 @@ public class Player : MonoBehaviour {
                 if (PlayerPrefs.GetInt("Games Played") >= (3 + 4))
                 {
                     Debug.Log("Congrats! You have completed the game!");
-                    StartCoroutine(ui.OpenTheGate2()); // (win the game)
+                    StartCoroutine(ui.OpenTheGate(wall2)); // (win the game)
                 }
                 else
                 {

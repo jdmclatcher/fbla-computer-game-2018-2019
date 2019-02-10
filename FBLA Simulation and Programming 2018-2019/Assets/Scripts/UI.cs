@@ -19,8 +19,7 @@ public class UI : MonoBehaviour {
     
     [SerializeField] private TextMeshProUGUI supportersText;
 
-    [SerializeField] private GameObject wall1;
-    [SerializeField] private GameObject wall2;
+    
 
     [SerializeField] private GameObject pauseUI;
     private bool isPaused; // check if game is paused or not
@@ -33,9 +32,7 @@ public class UI : MonoBehaviour {
         // setup cameras
         endingCamera.enabled = false;
         mainCamera.enabled = true;
-        // enable both walls
-        wall1.SetActive(true);
-        wall2.SetActive(true);
+        
         // enable world canvas
         mainWorldCanvas.gameObject.SetActive(true);
         miniGameUI.SetActive(false);
@@ -266,15 +263,15 @@ public class UI : MonoBehaviour {
     [SerializeField] private float camPause;
     public GameObject fadeToBlack;
 
-    // "open the gates"
-    public IEnumerator OpenTheGate1()
+    // "open the curtain"
+    public IEnumerator OpenTheGate(GameObject wall)
     {
         // TODO fancy stuff
         // wall opening animation
-        Animation wallAnim = wall1.GetComponent<Animation>();
+        Animation wallAnim = wall.GetComponent<Animation>();
         wallAnim.Play("Wall Open");
 
-        wall1.gameObject.GetComponent<BoxCollider>().enabled = false; // disable box trigger
+        wall.gameObject.GetComponent<BoxCollider>().enabled = false; // disable box trigger
 
         // cameras
         endingCamera.enabled = true;
@@ -300,46 +297,41 @@ public class UI : MonoBehaviour {
         mainCamera.enabled = true;
         endingCamera.enabled = false;
 
-
-        
-
-
-        // wall1.SetActive(false);
     }
 
-    public IEnumerator OpenTheGate2()
-    {
-        // TODO fancy stuff
-        // wall opening animation
-        Animation wallAnim = wall2.GetComponent<Animation>();
-        wallAnim.Play("Wall 2 Open"); // change in wall animation name
+    //public IEnumerator OpenTheGate2()
+    //{
+    //    // TODO fancy stuff
+    //    // wall opening animation
+    //    Animation wallAnim = wall2.GetComponent<Animation>();
+    //    wallAnim.Play("Wall 2 Open"); // change in wall animation name
 
-        wall2.gameObject.GetComponent<BoxCollider>().enabled = false; // disable box trigger
+    //    wall2.gameObject.GetComponent<BoxCollider>().enabled = false; // disable box trigger
 
-        // cameras
-        endingCamera.enabled = true;
-        mainCamera.enabled = false;
+    //    // cameras
+    //    endingCamera.enabled = true;
+    //    mainCamera.enabled = false;
 
-        // camera sweep animation
-        Animation cameraAnim = endingCamera.gameObject.GetComponent<Animation>();
-        cameraAnim.Play("Cutscene Wall Cam");
+    //    // camera sweep animation
+    //    Animation cameraAnim = endingCamera.gameObject.GetComponent<Animation>();
+    //    cameraAnim.Play("Cutscene Wall Cam");
 
-        // wait until camera anim is done
-        yield return new WaitUntil(() => cameraAnim.IsPlaying("Cutscene Wall Cam") == false);
+    //    // wait until camera anim is done
+    //    yield return new WaitUntil(() => cameraAnim.IsPlaying("Cutscene Wall Cam") == false);
 
-        yield return new WaitForSeconds(camPause);
+    //    yield return new WaitForSeconds(camPause);
 
 
-        // reset pos
-        cameraAnim.Play("Cam Revert");
+    //    // reset pos
+    //    cameraAnim.Play("Cam Revert");
 
-        // wait until camera anim is done
-        yield return new WaitUntil(() => cameraAnim.IsPlaying("Cam Revert") == false);
+    //    // wait until camera anim is done
+    //    yield return new WaitUntil(() => cameraAnim.IsPlaying("Cam Revert") == false);
 
-        // then reset cameras
-        mainCamera.enabled = true;
-        endingCamera.enabled = false;
-    }
+    //    // then reset cameras
+    //    mainCamera.enabled = true;
+    //    endingCamera.enabled = false;
+    //}
 
     #endregion
 
