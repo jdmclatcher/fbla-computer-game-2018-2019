@@ -9,8 +9,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private float moveSpeed; // speed of player translation (movement)
     [SerializeField] private float speedHindranceMultiplier; // amount to divide speed by for horizontal movement
 
-    [SerializeField] private float mouseLookSensitivity; // for the mouse rotation (using mouse)
-    [SerializeField] private float keyLookSensitivity; // for the mouse rotation (using arrow keys)
+    public float mouseLookSensitivity; // for the mouse rotation (using mouse)
 
     // private floats to store values for translations and rotations of player
     private float rotate;
@@ -55,6 +54,7 @@ public class Player : MonoBehaviour {
         // get ref to animator in object
         animator = gameObject.GetComponent<Animator>();
 
+        mouseLookSensitivity = PlayerPrefs.GetInt("Sens"); // calculate sensitivity
 
         // enable both walls
         wall1.SetActive(true);
@@ -96,6 +96,8 @@ public class Player : MonoBehaviour {
             // invincible to collider when arrive back in main world
             respawnInvincible = true;
         }
+
+        PlayerPrefs.SetInt("Sens", 40); // set sens to half at start
         
     }
 
@@ -120,6 +122,22 @@ public class Player : MonoBehaviour {
                 // set walking to false, if no movement
                 animator.SetBool("walking", false);
             }
+
+            // set rotation anims accordingly
+            if(calculateRotation() > 0)
+            {
+                animator.SetBool("turning R", true);
+            } else
+            {
+                animator.SetBool("turning R", false);
+            }
+            if (calculateRotation() < 0)
+            {
+                animator.SetBool("turning L", true);
+            } else
+            {
+                animator.SetBool("turning L", false);
+            }
         }
 
         
@@ -140,6 +158,11 @@ public class Player : MonoBehaviour {
         }
     }
 
+    public void UpdateSens()
+    {
+        mouseLookSensitivity = PlayerPrefs.GetInt("Sens"); // calculate sensitivity
+    }
+
     #endregion
 
     #region Collision
@@ -147,14 +170,15 @@ public class Player : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         
-        // when the player colides with a test box...
-        if (other.tag == "Wall")
-        {
-            Debug.Log("Hey! Watch where you're going!");
-            // ...stops player movement temporarily using a coroutine
-            StartCoroutine(_restrain());
-            animator.SetBool("walking", false);
-        }
+        // TEMP prolly will delete
+        //// when the player colides with a test box...
+        //if (other.tag == "Wall")
+        //{
+        //    Debug.Log("Hey! Watch where you're going!");
+        //    // ...stops player movement temporarily using a coroutine
+        //    StartCoroutine(_restrain());
+        //    animator.SetBool("walking", false);
+        //}
 
         // switch statement that will validate each mini game number
         // and proceed accordingly
@@ -294,17 +318,18 @@ public class Player : MonoBehaviour {
             // sets value of the float "rotate" based on the value received from the mouse input
             rotate = Input.GetAxis("Mouse X") * Time.deltaTime * mouseLookSensitivity;
         }
-        // if the value from the input from the arrow keys is active
-        else if (Math.Abs(Input.GetAxis("Mouse X Keys")) > 0)
-        {
-            // sets the value of rotate based on the input from the arrow keys instead
-            rotate = Input.GetAxis("Mouse X Keys") * Time.deltaTime * keyLookSensitivity;
-        }
-        // if both are recieving no input, then the rotation is forced to 0 to prevent drifting
-        else if ((Math.Abs(Input.GetAxis("Mouse X Keys")) < 0.1f) || (Math.Abs(Input.GetAxis("Mouse X")) < 0.1f))
-        {
-            rotate = 0f;
-        }
+        // TODO delete
+        //// if the value from the input from the arrow keys is active
+        //else if (Math.Abs(Input.GetAxis("Mouse X Keys")) > 0)
+        //{
+        //    // sets the value of rotate based on the input from the arrow keys instead
+        //    rotate = Input.GetAxis("Mouse X Keys") * Time.deltaTime * keyLookSensitivity;
+        //}
+        //// if both are recieving no input, then the rotation is forced to 0 to prevent drifting
+        //else if ((Math.Abs(Input.GetAxis("Mouse X Keys")) < 0.1f) || (Math.Abs(Input.GetAxis("Mouse X")) < 0.1f))
+        //{
+        //    rotate = 0f;
+        //}
         // returns the float
         return rotate;
     }

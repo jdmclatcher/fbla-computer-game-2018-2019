@@ -52,6 +52,7 @@ public class MiniGame3UI : MonoBehaviour {
         yield return new WaitForSeconds(0.9f);
         countdownText.text = "GO!";
         yield return new WaitForSeconds(0.9f);
+        player.canRun();
         countdown.gameObject.SetActive(false); // stop countdown
         bgSpawner.SetActive(true);
         SpawnObject();
@@ -107,12 +108,14 @@ public class MiniGame3UI : MonoBehaviour {
     [SerializeField] private GameObject obstacleExplodeEffectGREEN;
 
     [SerializeField] private bool[] questionNumSeen;
+    [SerializeField] private MiniGame3Player player;
 
     // private vars hidden in inspector
     private int repPoints = 0;
     private bool correct;
     private bool hasChosen = false;
     private int questionsSeen = 0;
+    
 
     private int rand;
 

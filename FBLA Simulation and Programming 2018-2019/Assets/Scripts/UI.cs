@@ -19,6 +19,7 @@ public class UI : MonoBehaviour {
     [SerializeField] private GameObject pauseUI;
     private bool isPaused; // check if game is paused or not
     [SerializeField] private Player thePlayer; // ref to player
+    [SerializeField] private Slider pausedSensSlider; // ref to slider for sens setting
 
     public bool freeToMove = false;
 
@@ -55,15 +56,20 @@ public class UI : MonoBehaviour {
 
     private void PauseGame()
     {
+        pausedSensSlider.value = PlayerPrefs.GetInt("Sens"); // set val of slider
         // do stuff based on if game is paused or not
         if (isPaused)
         {
+            // PlayerPrefs.SetInt("Sens", (int) pausedSensSlider.value); // set sens to slider value
+            // thePlayer.UpdateSens();
             Cursor.visible = false;
             Time.timeScale = 1f;
             pauseUI.SetActive(false);
             isPaused = false;
         } else
         {
+            // PlayerPrefs.SetInt("Sens", (int) pausedSensSlider.value); // set sens to slider value
+            // thePlayer.UpdateSens();
             Cursor.visible = true;
             Time.timeScale = 0f;
             pauseUI.SetActive(true);
@@ -72,8 +78,16 @@ public class UI : MonoBehaviour {
         
     }
 
+    // when changed
+    public void OnSensSliderChange()
+    {
+        PlayerPrefs.SetInt("Sens", (int)pausedSensSlider.value); // set sens to slider value
+        thePlayer.UpdateSens(); // then update sens
+    }
+
     public void QuitGame()
     {
+        PlayerPrefs.SetInt("Sens", (int)slider.value); // set sens to slider value
         Time.timeScale = 1f; // resume normal time
         // Application.Quit(); // TEMP
         SceneManager.LoadScene("Title"); // go back to title screen

@@ -7,7 +7,7 @@ public class BoxPlayerController : MonoBehaviour {
     private float walkX;
     private float walkY;
 
-    private Animator animator;
+    public Animator animator;
 
     #region Start and Update
     private void Start()
@@ -36,10 +36,28 @@ public class BoxPlayerController : MonoBehaviour {
 
     #endregion
 
+    // pushing animation
+    private void OnCollisionEnter(Collision collision)
+    {
+        animator.SetBool("pushing", true);
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        animator.SetBool("pushing", false);
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (!collision.gameObject.activeInHierarchy)
+        {
+            animator.SetBool("pushing", false);
+        }
+    }
+
     #region Movement
     [SerializeField] private float verticalMoveSpeed;
     [SerializeField] private float horizontalMoveSpeed;
-    // [SerializeField] private float lookSens;
     [HideInInspector] public bool restrained;
 
     private float calculateZMovement()

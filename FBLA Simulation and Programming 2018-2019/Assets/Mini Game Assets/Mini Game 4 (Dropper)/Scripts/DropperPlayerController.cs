@@ -31,8 +31,6 @@ public class DropperPlayerController : MonoBehaviour {
 
     private void Update () {
         
-
-        // TODO fix movement restriction
         if (canMove)
         {
             transform.Translate(calculateXMovement(), 0, 0);

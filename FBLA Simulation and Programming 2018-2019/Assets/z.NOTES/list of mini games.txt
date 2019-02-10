@@ -12,18 +12,13 @@ STAGE 2
 7 - running for office
 
 
-NOTES
+stuff to do
 
-add BG to mini game 1
-add BG to mini game 2
+add chairs into mini game 2
 
+fix running animation in running for office
 
-box matcher needs new anims
-
+add BGs in running for office
 
 
 BUGS:
-
-fix stunning animation
-
-add walls back into min game 5

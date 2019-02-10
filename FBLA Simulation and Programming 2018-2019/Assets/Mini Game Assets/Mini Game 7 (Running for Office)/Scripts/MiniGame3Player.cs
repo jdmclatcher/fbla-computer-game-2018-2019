@@ -6,9 +6,12 @@ public class MiniGame3Player : MonoBehaviour {
     [SerializeField] private float slowMoVal;
     [SerializeField] private MiniGame3UI ui;
 
+    private Animator animator;
+
     private void Start()
     {
-        // ui = FindObjectOfType<MiniGame3UI>(); // obtain ref to UI
+        animator = GetComponent<Animator>();
+        animator.speed = 4f;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,6 +33,11 @@ public class MiniGame3Player : MonoBehaviour {
         {
             Time.timeScale = 1f;
         }
+    }
+
+    public void canRun()
+    {
+        animator.SetBool("canRun", true);
     }
 
 }
