@@ -15,7 +15,6 @@ public class StartingUI : MonoBehaviour {
     {
         // run routine
         StartCoroutine(ILoadScene("World"));
-        // SceneManager.LoadScene("World");
     }
 
     public void QuitGame()
@@ -27,11 +26,11 @@ public class StartingUI : MonoBehaviour {
     {
         // run routine
         StartCoroutine(ILoadScene("Info"));
-        // SceneManager.LoadScene("Info");
     }
 
     IEnumerator ILoadScene(string sceneToLoad)
     {
+        PlayerPrefs.DeleteAll(); // reset all player prefs
         curtainClose.SetActive(true); // set curtain active
         // get ref to anim on curtain
         Animation curtainAnim = curtainClose.GetComponent<Animation>();

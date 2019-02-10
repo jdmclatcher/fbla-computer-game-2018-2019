@@ -2423,7 +2423,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -183.6, y: 478}
+  m_AnchoredPosition: {x: -183.6, y: 467}
   m_SizeDelta: {x: 1458.2, y: 58.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &500536007
@@ -2449,14 +2449,14 @@ MonoBehaviour:
     finished -->
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: da3375f47643ed74ab6ab576a473174b, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 7ed3059e40e2ced468f6471ede24985d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -4613,7 +4613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 724.69995, y: 524}
+  m_AnchoredPosition: {x: 724.69995, y: 513}
   m_SizeDelta: {x: 324, y: 82.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &855090660
@@ -6666,7 +6666,6 @@ GameObject:
   - component: {fileID: 1351447510}
   - component: {fileID: 1351447513}
   - component: {fileID: 1351447512}
-  - component: {fileID: 1351447511}
   m_Layer: 0
   m_Name: Booth
   m_TagString: Untagged
@@ -6680,25 +6679,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1351447509}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.564, z: 0}
-  m_LocalScale: {x: 2.168, y: 1.1262, z: 0.23134}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: 0.031, y: -0.223, z: -0.97}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 761362254}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1351447511
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1351447509}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 180}
 --- !u!23 &1351447512
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6714,7 +6701,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 633def66d0c0e2746bec6380a90980e1, type: 2}
+  - {fileID: 2100000, guid: e8707097e91a74743a5084340888e082, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6740,7 +6727,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1351447509}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: d2720e8629def8a4bb9d7f6314bf0986, type: 3}
 --- !u!1 &1362289884
 GameObject:
   m_ObjectHideFlags: 0

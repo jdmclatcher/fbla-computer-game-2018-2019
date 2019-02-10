@@ -64,11 +64,8 @@ public class DropperPlayerController : MonoBehaviour {
 
     IEnumerator IWaitForCountdown()
     {
-        // canMove = false;
         // wait 3 and a half seconds before can move
         yield return new WaitForSeconds(3.5f);
-        //canMove = true;
-        //yield return null;
 
     }
 
@@ -78,12 +75,6 @@ public class DropperPlayerController : MonoBehaviour {
         {
             Debug.Log("That's correct!");
             ui.AddCorrect(); // add rep points
-
-            //if (!correctText.activeInHierarchy)
-            //{
-            //    // turn on indicator - correct
-            //    correctText.SetActive(true);
-            //}
 
             Instantiate(correctText, responsesPos.position, responsesPos.rotation, responsesPos);
 
@@ -99,11 +90,6 @@ public class DropperPlayerController : MonoBehaviour {
             Debug.Log("Incorrect.");
             ui.AddError(); // calls function that will add 1 to the total errors
 
-            //if (!incorrectText.activeInHierarchy)
-            //{
-            //    // turn on indicator - incorrect
-            //    incorrectText.SetActive(true);
-            //}
 
             Instantiate(incorrectText, responsesPos.position, responsesPos.rotation, responsesPos);
 

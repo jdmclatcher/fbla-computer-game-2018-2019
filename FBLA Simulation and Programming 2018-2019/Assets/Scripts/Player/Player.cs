@@ -9,10 +9,6 @@ public class Player : MonoBehaviour {
     [SerializeField] private float moveSpeed; // speed of player translation (movement)
     [SerializeField] private float speedHindranceMultiplier; // amount to divide speed by for horizontal movement
 
-    // MAY ADD JUMPING LATER -- 
-    // [SerializeField] private float jumpForce;
-    // [SerializeField] private float gravityForce; 
-
     [SerializeField] private float mouseLookSensitivity; // for the mouse rotation (using mouse)
     [SerializeField] private float keyLookSensitivity; // for the mouse rotation (using arrow keys)
 
@@ -34,9 +30,6 @@ public class Player : MonoBehaviour {
     private int firstTime; // int to track if player has played game at all before
 
     [SerializeField] private Transform startPosition;
-
-    [Header("Attached Objects")]
-    [SerializeField] private GameObject backupCamera;
 
     [Header("UI")]
     [SerializeField] private GameObject needMoreGamesText;
@@ -102,18 +95,10 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    Cursor.visible = false;
-        //}
 
         // runs the movement and rotation code only if the player is allowed to move
         if (!restrained)
         {
-            // "backup camera" follows the player
-            backupCamera.transform.position = transform.position;
-            backupCamera.transform.rotation = transform.rotation;
             // applies the rotations and translations (movement) using returned values
             // from movement functions
             transform.Rotate(0, calculateRotation(), 0);
