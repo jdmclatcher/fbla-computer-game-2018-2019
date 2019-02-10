@@ -28,6 +28,7 @@ models
 BUGS:
 
 fix collision - make colliders fatter
+
 fix area light
 
 fix stunning animation

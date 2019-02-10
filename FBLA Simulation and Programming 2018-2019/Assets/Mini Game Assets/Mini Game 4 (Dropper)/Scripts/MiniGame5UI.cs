@@ -6,27 +6,6 @@ using TMPro;
 public class MiniGame5UI : MonoBehaviour
 {
 
-    
-    /*
-     * 
-     * 
-     * ALL about competitive events - not really, only a little bit about em
-     * 
-     * a certain topic is given, and you have to catch the falling items that relate to that topic
-     * catch as many as you can before you get a certain number incorrect
-     * 
-     * THINGS NEEDED
-     *  a spawner to drop corrrect and incorrect items
-     *  a UI that displays info about what the topic is
-     *  a board/catcher that will be controllable and will be able to collide with the spawned objects
-     *  
-     *  
-     *  TODO fix box collider with edgy being riggidy
-     *  TODO actually add stuff to the dropped items
-     *      true or false statements, collect the true, avoid the false
-     *  
-    */
-
 
     #region Countdown
     [Header("Countdown")]

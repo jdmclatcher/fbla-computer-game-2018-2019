@@ -48,7 +48,7 @@ public class Player : MonoBehaviour {
     void Start()
     {
         // TEMP reset playerprefs on scene enter
-        ResetPrefs(); // resets everything, so it will always be the first time playing
+        // ResetPrefs(); // resets everything, so it will always be the first time playing
 
         // get ref to animator in object
         animator = gameObject.GetComponent<Animator>();
@@ -354,17 +354,8 @@ public class Player : MonoBehaviour {
 
     #region TEMP UTIL
 
-    // TEMP
-    // reset playerprefs rep points value
     private void ResetPrefs()
     {
-        // PlayerPrefs.SetInt("Rep Points", 0);
-        // PlayerPrefs.SetInt("Supporters", 0);
-        //PlayerPrefs.SetFloat("xLOC", startPosition.position.x);
-        //PlayerPrefs.SetFloat("yLOC", startPosition.position.y);
-        //PlayerPrefs.SetFloat("zLOC", startPosition.position.z);
-        //PlayerPrefs.SetInt("First Time", 0);
-        //PlayerPrefs.SetInt("Games Played", 0);
         PlayerPrefs.DeleteAll();
     }
 

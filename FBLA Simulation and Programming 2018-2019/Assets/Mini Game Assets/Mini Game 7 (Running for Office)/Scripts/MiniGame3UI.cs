@@ -178,8 +178,6 @@ public class MiniGame3UI : MonoBehaviour {
         
         if (correct)
         {
-            // TODO anims for get right
-            // object explodes in a green mess
 
             // Instantiate(correctParticle, obstacle.transform.position, obstacle.transform.rotation); // spawn in good particle
             questionsCorrect++; // increase number of questions 

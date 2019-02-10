@@ -16,12 +16,6 @@ public class MiniGame6UI : MonoBehaviour {
      * if you get the box wrong, it will force the box out far enough so you can interact with it again
      * 
      * Box sorter - you have 3 or 4 topics and you have to put the correctly relating boxes in the slots
-     * 
-     * TODO add topics and stuff to boxes and slots
-     * TODO add check or X
-     * TODO throw back box if you get it incorrect
-     * balance with rep points (maybe have it be base 50)
-     * 
     */ 
 
     #region Countdown
@@ -120,7 +114,6 @@ public class MiniGame6UI : MonoBehaviour {
     public void BadBox()
     {
         Debug.Log("Bad job.");
-        // TODO bad things
     }
 
     private void GameEnd()

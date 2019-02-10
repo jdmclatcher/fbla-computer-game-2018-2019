@@ -3,15 +3,10 @@ using System.Collections.Generic;
 using System.Collections;
 using TMPro;
 using UnityEngine.UI;
-// using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour {
 
-    // TODO add transitions to mini game scenes using image BGs and anims 
-    //  just add object at beginning of scene to run until anim stops, then activate the 
-    //  the countdown script
-
-    // TODO add textmeshpro to sub-ui text elements
     // TODO add a credits slide to cite information - national website, national dress code, etc...
 
  
@@ -80,8 +75,8 @@ public class UI : MonoBehaviour {
     public void QuitGame()
     {
         Time.timeScale = 1f; // resume normal time
-        Application.Quit(); // TEMP
-        // SceneManager.LoadScene("Title"); // go back to title screen
+        // Application.Quit(); // TEMP
+        SceneManager.LoadScene("Title"); // go back to title screen
     }
 
     #region Mini-Game
@@ -269,7 +264,6 @@ public class UI : MonoBehaviour {
     // "open the curtain"
     public IEnumerator OpenTheGate(GameObject wall)
     {
-        // TODO fancy stuff
         // wall opening animation
         Animation wallAnim = wall.GetComponent<Animation>();
         wallAnim.Play("Wall Open");
@@ -302,39 +296,7 @@ public class UI : MonoBehaviour {
 
     }
 
-    //public IEnumerator OpenTheGate2()
-    //{
-    //    // TODO fancy stuff
-    //    // wall opening animation
-    //    Animation wallAnim = wall2.GetComponent<Animation>();
-    //    wallAnim.Play("Wall 2 Open"); // change in wall animation name
-
-    //    wall2.gameObject.GetComponent<BoxCollider>().enabled = false; // disable box trigger
-
-    //    // cameras
-    //    endingCamera.enabled = true;
-    //    mainCamera.enabled = false;
-
-    //    // camera sweep animation
-    //    Animation cameraAnim = endingCamera.gameObject.GetComponent<Animation>();
-    //    cameraAnim.Play("Cutscene Wall Cam");
-
-    //    // wait until camera anim is done
-    //    yield return new WaitUntil(() => cameraAnim.IsPlaying("Cutscene Wall Cam") == false);
-
-    //    yield return new WaitForSeconds(camPause);
-
-
-    //    // reset pos
-    //    cameraAnim.Play("Cam Revert");
-
-    //    // wait until camera anim is done
-    //    yield return new WaitUntil(() => cameraAnim.IsPlaying("Cam Revert") == false);
-
-    //    // then reset cameras
-    //    mainCamera.enabled = true;
-    //    endingCamera.enabled = false;
-    //}
+    
 
     #endregion
 

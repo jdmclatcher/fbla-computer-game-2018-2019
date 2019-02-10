@@ -278,8 +278,6 @@ public class MiniGame2UI : MonoBehaviour {
 
     private void Check3(string response1, string response2, string response3, string ID)
     {
-        // TODO MAYBE parse optional addional answers
-        
         // call a check every time, but pass in different value to 
         // evaluate based on checkCount number
         switch (checkCount)

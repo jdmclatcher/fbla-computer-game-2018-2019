@@ -14,7 +14,6 @@ public class OpenSceneAfterTime : MonoBehaviour {
         gameObject.SetActive(false); // disable anim and object by default
     }
 
-    // TODO CHANGE TO UPDATE
     private void Update()
     { 
         // after certain time, will load scene
