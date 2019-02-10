@@ -88,8 +88,9 @@ ModelImporter:
     7400002: headTurnL
     7400004: headTurnR
     7400006: Idle
-    7400008: RUN
-    7400010: Walking
+    7400008: Push
+    7400010: RUN
+    7400012: Walking
     9500000: //RootNode
     13700000: Cube
     13700002: Cube_001
