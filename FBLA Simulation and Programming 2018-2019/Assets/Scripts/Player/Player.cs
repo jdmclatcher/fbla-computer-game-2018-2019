@@ -98,7 +98,9 @@ public class Player : MonoBehaviour {
         }
 
         PlayerPrefs.SetInt("Sens", 40); // set sens to half at start
-        
+        UpdateSens();
+
+
     }
 
     // Update is called once per frame
@@ -318,18 +320,11 @@ public class Player : MonoBehaviour {
             // sets value of the float "rotate" based on the value received from the mouse input
             rotate = Input.GetAxis("Mouse X") * Time.deltaTime * mouseLookSensitivity;
         }
-        // TODO delete
-        //// if the value from the input from the arrow keys is active
-        //else if (Math.Abs(Input.GetAxis("Mouse X Keys")) > 0)
-        //{
-        //    // sets the value of rotate based on the input from the arrow keys instead
-        //    rotate = Input.GetAxis("Mouse X Keys") * Time.deltaTime * keyLookSensitivity;
-        //}
-        //// if both are recieving no input, then the rotation is forced to 0 to prevent drifting
-        //else if ((Math.Abs(Input.GetAxis("Mouse X Keys")) < 0.1f) || (Math.Abs(Input.GetAxis("Mouse X")) < 0.1f))
-        //{
-        //    rotate = 0f;
-        //}
+        // if recieving no input, then the rotation is forced to 0 to prevent drifting
+        else if (Math.Abs(Input.GetAxis("Mouse X")) < 0.1f)
+        {
+            rotate = 0f;
+        }
         // returns the float
         return rotate;
     }
