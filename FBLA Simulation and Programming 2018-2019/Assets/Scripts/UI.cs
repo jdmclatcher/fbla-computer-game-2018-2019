@@ -20,6 +20,7 @@ public class UI : MonoBehaviour {
     private bool isPaused; // check if game is paused or not
     [SerializeField] private Player thePlayer; // ref to player
     [SerializeField] private Slider pausedSensSlider; // ref to slider for sens setting
+    [SerializeField] private AudioSource clickSound;
 
     public bool freeToMove = false;
 
@@ -30,8 +31,10 @@ public class UI : MonoBehaviour {
         fadeToBlack.SetActive(false);
         // setup cameras
         endingCamera.enabled = false;
+        endingCamera.GetComponent<AudioListener>().enabled = false;
         mainCamera.enabled = true;
-        
+        mainCamera.GetComponent<AudioListener>().enabled = true;
+
         // enable world canvas
         mainWorldCanvas.gameObject.SetActive(true);
         miniGameUI.SetActive(false);
@@ -128,6 +131,7 @@ public class UI : MonoBehaviour {
 
     public void ShowMiniGameUI()
     {
+        clickSound.Play(); // play SFX
         freeToMove = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true; // show the cursor
@@ -156,7 +160,8 @@ public class UI : MonoBehaviour {
 
     // loads RANDOM mini-game scene
     public void TransitionMiniGameScenes()
-    { 
+    {
+        clickSound.Play(); // play SFX
         // update playerprefs
         PlayerPrefs.SetInt("Games Played", PlayerPrefs.GetInt("Games Played") + 1);
 
@@ -187,6 +192,7 @@ public class UI : MonoBehaviour {
     // when the player presses the QUIT option
     public void QuitMiniGameUI()
     {
+        clickSound.Play(); // play SFX
         StartCoroutine(IQuitMiniGameUI()); // run a coroutine
     }
 
@@ -290,7 +296,9 @@ public class UI : MonoBehaviour {
 
         // cameras
         endingCamera.enabled = true;
+        endingCamera.GetComponent<AudioListener>().enabled = true;
         mainCamera.enabled = false;
+        mainCamera.GetComponent<AudioListener>().enabled = false;
 
         // camera sweep animation
         Animation cameraAnim = endingCamera.gameObject.GetComponent<Animation>();
@@ -310,7 +318,9 @@ public class UI : MonoBehaviour {
 
         // then reset cameras
         mainCamera.enabled = true;
+        mainCamera.GetComponent<AudioListener>().enabled = true;
         endingCamera.enabled = false;
+        endingCamera.GetComponent<AudioListener>().enabled = false;
 
     }
 

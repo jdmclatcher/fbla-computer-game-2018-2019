@@ -55,9 +55,8 @@ public class MiniGame1UI : MonoBehaviour {
 
     #region Gameplay
 
-    [Header("Signs")]
-    //[SerializeField] private GameObject checkSign;
-    //[SerializeField] private GameObject xSign;
+    [SerializeField] private AudioSource clickSound; // click SFX
+    [SerializeField] private AudioSource badClickSound; // click SFX
 
     [Header("Game Stats")]
     [SerializeField] private int numberOfCorrectItems;
@@ -79,6 +78,7 @@ public class MiniGame1UI : MonoBehaviour {
     public void Correct(GameObject button)
     {
         Debug.Log("Correct!");
+        clickSound.Play();
         // SPAWN A CHECK MARK ... 
         //Instantiate(checkSign, button.transform.position, button.transform.rotation);
         //checkSign.transform.SetParent(GameObject.FindGameObjectWithTag("Signs").transform, false);
@@ -97,6 +97,7 @@ public class MiniGame1UI : MonoBehaviour {
     public void Incorrect(GameObject button)
     {
         Debug.Log("Incorrect!");
+        badClickSound.Play();
         // SPAWN A X MARK ... 
         //Instantiate(xSign, button.transform.position, button.transform.rotation);
         //xSign.transform.SetParent(GameObject.FindGameObjectWithTag("Signs").transform, false);
