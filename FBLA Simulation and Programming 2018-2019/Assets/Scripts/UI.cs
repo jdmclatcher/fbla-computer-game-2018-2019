@@ -62,6 +62,7 @@ public class UI : MonoBehaviour {
         {
             // PlayerPrefs.SetInt("Sens", (int) pausedSensSlider.value); // set sens to slider value
             // thePlayer.UpdateSens();
+            Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             Time.timeScale = 1f;
             pauseUI.SetActive(false);
@@ -70,6 +71,7 @@ public class UI : MonoBehaviour {
         {
             // PlayerPrefs.SetInt("Sens", (int) pausedSensSlider.value); // set sens to slider value
             // thePlayer.UpdateSens();
+            Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             Time.timeScale = 0f;
             pauseUI.SetActive(true);
@@ -127,6 +129,7 @@ public class UI : MonoBehaviour {
     public void ShowMiniGameUI()
     {
         freeToMove = false;
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true; // show the cursor
         // disable world canvas
         mainWorldCanvas.gameObject.SetActive(false);
@@ -204,6 +207,7 @@ public class UI : MonoBehaviour {
         // enable world canvas again
         mainWorldCanvas.gameObject.SetActive(true);
         Debug.Log(gameNumber);
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false; // hide the cursor again
         // disable popup UI by finding the gameObject by name
 

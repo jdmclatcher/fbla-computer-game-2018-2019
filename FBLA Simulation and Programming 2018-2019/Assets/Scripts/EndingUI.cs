@@ -8,6 +8,7 @@ public class EndingUI : MonoBehaviour {
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true; // reactivate the cursor
         // update final supporters
         supportersVal.text = PlayerPrefs.GetInt("Supporters").ToString();

@@ -47,6 +47,7 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         CheckPlayed();
         // TEMP reset playerprefs on scene enter
         // ResetPrefs(); // resets everything, so it will always be the first time playing
