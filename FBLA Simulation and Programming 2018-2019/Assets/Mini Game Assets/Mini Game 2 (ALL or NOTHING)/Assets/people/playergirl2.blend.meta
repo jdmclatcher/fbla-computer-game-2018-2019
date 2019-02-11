@@ -1,0 +1,178 @@
+fileFormatVersion: 2
+guid: e1c5ff839b053b846a3e309c6f483aba
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Base
+    100004: Base_001
+    100006: Base_002
+    100008: Base_003
+    100010: Base_004
+    100012: Base_005
+    100014: Base_006
+    100016: Base_007
+    100018: Base_008
+    100020: Base_009
+    100022: Base_010
+    100024: Base_011
+    100026: Base_012
+    100028: chest
+    100030: ChestUpper
+    100032: ChestUpper_001
+    100034: ChestUpper_002
+    100036: ChestUpper_009
+    100038: ChestUpper_010
+    100040: ChestUpper_011
+    100042: ChestUpper_012
+    100044: ChestUpper_013
+    100046: ChestUpper_014
+    100048: ChestUpper_015
+    100050: ChestUpper_016
+    100052: ChestUpper_017
+    100054: ChestUpper_018
+    100056: ChestUpper_019
+    100058: ChestUpper_020
+    100060: ChestUpper_021
+    100062: ChestUpper_022
+    100064: ChestUpper_023
+    100066: ChestUpper_024
+    100068: Cube_000
+    100070: Cube_001
+    100072: Cube_002
+    100074: //RootNode
+    400000: Armature
+    400002: Base
+    400004: Base_001
+    400006: Base_002
+    400008: Base_003
+    400010: Base_004
+    400012: Base_005
+    400014: Base_006
+    400016: Base_007
+    400018: Base_008
+    400020: Base_009
+    400022: Base_010
+    400024: Base_011
+    400026: Base_012
+    400028: chest
+    400030: ChestUpper
+    400032: ChestUpper_001
+    400034: ChestUpper_002
+    400036: ChestUpper_009
+    400038: ChestUpper_010
+    400040: ChestUpper_011
+    400042: ChestUpper_012
+    400044: ChestUpper_013
+    400046: ChestUpper_014
+    400048: ChestUpper_015
+    400050: ChestUpper_016
+    400052: ChestUpper_017
+    400054: ChestUpper_018
+    400056: ChestUpper_019
+    400058: ChestUpper_020
+    400060: ChestUpper_021
+    400062: ChestUpper_022
+    400064: ChestUpper_023
+    400066: ChestUpper_024
+    400068: Cube_000
+    400070: Cube_001
+    400072: Cube_002
+    400074: //RootNode
+    2100000: basic
+    2100002: shoes
+    2100004: Suit
+    2100006: skin
+    2100008: Pant
+    4300000: Cube_001
+    4300002: Cube_000
+    4300004: Cube_002
+    7400000: Default Take
+    9500000: //RootNode
+    13700000: Cube_000
+    13700002: Cube_001
+    13700004: Cube_002
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
