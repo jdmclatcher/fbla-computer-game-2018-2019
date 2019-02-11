@@ -41,7 +41,7 @@ public class BackgroundSpawner : MonoBehaviour {
             if(i == randomNum)
             {
                 // spawn in a clone
-                GameObject obstacleClone = Instantiate(objectsToSpawn[i], spawnLocation.transform.position, objectsToSpawn[i].transform.rotation, spawnLocation.transform);
+                Instantiate(objectsToSpawn[i], spawnLocation.transform.position, objectsToSpawn[i].transform.rotation, spawnLocation.transform);
             }
         }   
     }
