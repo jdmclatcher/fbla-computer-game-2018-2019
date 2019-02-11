@@ -32,24 +32,7 @@ public class BoxPlayerController : MonoBehaviour {
                 animator.SetBool("walking", false);
             }
 
-            //if (calculateXMovement() > 0)
-            //{
-            //    transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
-            //} 
-            //if(calculateXMovement() < 0)
-            //{
-            //    transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 180, transform.eulerAngles.z);
-            //}
-            //if(calculateZMovement() > 0)
-            //{
-            //    transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 90, transform.eulerAngles.z);
-            //}
-            //if (calculateZMovement() < 0)
-            //{
-            //    transform.rotation = Quaternion.Euler(transform.eulerAngles.x, -90, transform.eulerAngles.z);
-            //}
-
-
+            // TODO fix player rotation in this game
         }
 
     }
