@@ -83,6 +83,9 @@ public class MiniGame6UI : MonoBehaviour {
     [SerializeField] private int totalBoxes;
     [SerializeField] private int startingRepPoints; // rep points to start with
     [SerializeField] private float pointsLostPerSecond; // points lost per second of time elapsed
+    [SerializeField] private AudioSource goodSound;
+    [SerializeField] private AudioSource badSound;
+    [SerializeField] private AudioSource endGameSound;
     private int repPoints; 
 
     private int boxesLeft;
@@ -98,6 +101,7 @@ public class MiniGame6UI : MonoBehaviour {
 
     public void GoodBox()
     {
+        goodSound.Play();
         // decrease the number of boxes left
         boxesLeft--;
         // update text 
@@ -113,11 +117,16 @@ public class MiniGame6UI : MonoBehaviour {
 
     public void BadBox()
     {
+        if (!badSound.isPlaying)
+        {
+            badSound.Play(); // play SFX only if not currently playing
+        }
         Debug.Log("Bad job.");
     }
 
     private void GameEnd()
     {
+        endGameSound.Play();
         thePlayer.restrained = true; // stop player which stops clock
 
         // calculate final rep points

@@ -58,6 +58,8 @@ public class MiniGame8UI : MonoBehaviour {
     [SerializeField] private int totalStartingPoints;
     // hard coded in editor, for getting specific correct vals
     [SerializeField] private int[] correctVals;
+    [SerializeField] private AudioSource click;
+    [SerializeField] private AudioSource endGameSound;
 
     private int numberIncorrect = 0;
     private int repPoints = 0; // init as 0
@@ -73,7 +75,7 @@ public class MiniGame8UI : MonoBehaviour {
 
     public void CheckAnswers(Button button)
     {
-        
+        click.Play();
         button.interactable = false; // disbale button so they cant spam it
         // called from button, evaluates each answer
         int correctCountTEMP = 0; // reset temp correct count 
@@ -133,6 +135,7 @@ public class MiniGame8UI : MonoBehaviour {
 
     private void GameEnd()
     {
+        endGameSound.Play();
         // update texts
         // can't have negative rep points
         if(repPoints < 0)

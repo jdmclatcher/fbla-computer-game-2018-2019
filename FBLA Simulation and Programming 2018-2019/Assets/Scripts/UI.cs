@@ -7,10 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour {
 
-    // TODO add a credits slide to cite information - national website, national dress code, etc...
-
- 
-    // TOFIX only the main mini game items are getting the exit animation
     
     [SerializeField] private TextMeshProUGUI supportersText;
 

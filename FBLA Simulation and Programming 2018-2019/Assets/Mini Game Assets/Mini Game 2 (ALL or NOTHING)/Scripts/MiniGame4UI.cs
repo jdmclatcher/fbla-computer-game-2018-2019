@@ -55,8 +55,10 @@ public class MiniGame4UI : MonoBehaviour {
         timer.SetActive(true);
         // set active camera to be the main one
         main.enabled = true;
+        main.GetComponent<AudioListener>().enabled = true;
         bRoll.SetActive(false);
         bRoll.GetComponent<Camera>().enabled = false;
+        bRoll.GetComponent<AudioListener>().enabled = false;
         // disbale victory stuff by default
         victoryStuff.SetActive(false);
         gameEnd.SetActive(false);
@@ -115,6 +117,7 @@ public class MiniGame4UI : MonoBehaviour {
     [SerializeField] private float secondsToWait;
     [SerializeField] private Button[] buttons;
     [SerializeField] private GameObject timer;
+    [SerializeField] private AudioSource applause;
 
     private bool correct;
     private bool hasAnswered = false;
@@ -202,12 +205,15 @@ public class MiniGame4UI : MonoBehaviour {
 
     IEnumerator IVictoryCutscene()
     {
+        applause.Play();
         // spawn in victory stuff
         victoryStuff.SetActive(true);
         // change camera to panning camera
         main.enabled = false;
+        main.GetComponent<AudioListener>().enabled = false;
         bRoll.SetActive(true);
         bRoll.GetComponent<Camera>().enabled = true;
+        bRoll.GetComponent<AudioListener>().enabled = true;
         // wait a certain amount of seconds
         gameUI.SetActive(false);
         yield return new WaitForSeconds(panDuration);

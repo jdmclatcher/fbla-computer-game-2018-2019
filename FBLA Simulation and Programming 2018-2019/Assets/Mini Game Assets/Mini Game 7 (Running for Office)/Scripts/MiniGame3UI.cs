@@ -57,6 +57,8 @@ public class MiniGame3UI : MonoBehaviour {
         hasStarted = true;
         countdown.gameObject.SetActive(false); // stop countdown
         bgSpawner.SetActive(true);
+        treeSpawner1.SetActive(true);
+        treeSpawner2.SetActive(true);
         SpawnObject();
         SetRandTime();
 
@@ -66,12 +68,17 @@ public class MiniGame3UI : MonoBehaviour {
 
     #region Start and Update
 
+    [SerializeField] private GameObject treeSpawner1;
+    [SerializeField] private GameObject treeSpawner2;
+
     private void Start()
     {
         curtain.SetActive(true);
         countdown.SetActive(false);
         SetRandTime(); // set the init rand time interval for obstacle
         bgSpawner.SetActive(false);
+        treeSpawner1.SetActive(false);
+        treeSpawner2.SetActive(false);
         gameCompletedScreen.SetActive(false);
         correctText.text = questionsCorrect.ToString();
         StartCoroutine(_countdown());
@@ -111,6 +118,10 @@ public class MiniGame3UI : MonoBehaviour {
 
     [SerializeField] private bool[] questionNumSeen;
     [SerializeField] private MiniGame3Player player;
+
+    [SerializeField] private AudioSource goodSound;
+    [SerializeField] private AudioSource badSound;
+    [SerializeField] private AudioSource gameEndSound;
 
     // private vars hidden in inspector
     private int repPoints = 0;
@@ -159,6 +170,7 @@ public class MiniGame3UI : MonoBehaviour {
     // bind to the correct option
     public void CorrectAnswer()
     {
+        goodSound.Play();
         // spawn in check
         Instantiate(check, checkXSpawnPos.position, checkXSpawnPos.rotation, checkXSpawnPos);
         hasChosen = true;
@@ -213,6 +225,8 @@ public class MiniGame3UI : MonoBehaviour {
     
     public void HitObstacle(GameObject theObstacle)
     {
+        badSound.Play();
+
         Debug.Log(correct);
         if (!correct)
         {
@@ -240,6 +254,7 @@ public class MiniGame3UI : MonoBehaviour {
     // called from the finish line controller script
     public void GameCompleted()
     {
+        gameEndSound.Play();
         // set values of text objects
         correctText.text = questionsCorrect.ToString();
         repPointsText.text = repPoints.ToString();

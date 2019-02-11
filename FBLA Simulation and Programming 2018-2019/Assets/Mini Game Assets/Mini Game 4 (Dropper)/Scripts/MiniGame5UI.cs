@@ -66,6 +66,9 @@ public class MiniGame5UI : MonoBehaviour
     [SerializeField] private int repPointsPerAnswer;
     [SerializeField] private int repPointsPerExtraLife;
     [HideInInspector] public int objectsLength;
+    [SerializeField] private AudioSource getRight;
+    [SerializeField] private AudioSource getWrong;
+    [SerializeField] private AudioSource endGameSound;
     private int repPoints;
 
     [Header("UI")]
@@ -76,6 +79,7 @@ public class MiniGame5UI : MonoBehaviour
 
     public void AddCorrect()
     {
+        getRight.Play();
         // add to total rep points
         repPoints += repPointsPerAnswer;
         // decrease amount of objects left in array
@@ -91,6 +95,7 @@ public class MiniGame5UI : MonoBehaviour
 
     public void AddError()
     {
+        getWrong.Play();
         // decrease amount of objects left in array
         objectsLength--;
         // prevent errors from being more than the max errors
@@ -116,6 +121,7 @@ public class MiniGame5UI : MonoBehaviour
 
     private void EndGame()
     {
+        endGameSound.Play();
         Debug.Log("Game Over.");
         spawner.SetActive(false); // stop spawning
         thePlayer.canMove = false;

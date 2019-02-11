@@ -42,6 +42,8 @@ public class Player : MonoBehaviour {
     [SerializeField] private GameObject wall1;
     [SerializeField] private GameObject wall2;
 
+    [SerializeField] private AudioSource anotherVictory;
+
     #region Start and Update
 
     // Use this for initialization
@@ -49,8 +51,6 @@ public class Player : MonoBehaviour {
     {
         Cursor.lockState = CursorLockMode.Locked;
         CheckPlayed();
-        // TEMP reset playerprefs on scene enter
-        // ResetPrefs(); // resets everything, so it will always be the first time playing
 
         // get ref to animator in object
         animator = gameObject.GetComponent<Animator>();
@@ -172,16 +172,6 @@ public class Player : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        // TEMP prolly will delete
-        //// when the player colides with a test box...
-        //if (other.tag == "Wall")
-        //{
-        //    Debug.Log("Hey! Watch where you're going!");
-        //    // ...stops player movement temporarily using a coroutine
-        //    StartCoroutine(_restrain());
-        //    animator.SetBool("walking", false);
-        //}
 
         // switch statement that will validate each mini game number
         // and proceed accordingly
@@ -218,6 +208,7 @@ public class Player : MonoBehaviour {
                 if (PlayerPrefs.GetInt("Games Played") >= 3)
                 {
                     Debug.Log("Congrats! You can move on now.");
+                    anotherVictory.Play();
                     StartCoroutine(ui.OpenTheGate(wall1)); // go to next level
                     curtain1Arrow.SetActive(false); // disable indicator 
                 } else
@@ -231,6 +222,7 @@ public class Player : MonoBehaviour {
                 // if player has correct amount of games played, they can pass through
                 if (PlayerPrefs.GetInt("Games Played") >= (3 + 4))
                 {
+                    anotherVictory.Play();
                     Debug.Log("Congrats! You have completed the game!");
                     StartCoroutine(ui.OpenTheGate(wall2)); // (win the game)
                     curtain2Arrow.SetActive(false); // disable indicator 

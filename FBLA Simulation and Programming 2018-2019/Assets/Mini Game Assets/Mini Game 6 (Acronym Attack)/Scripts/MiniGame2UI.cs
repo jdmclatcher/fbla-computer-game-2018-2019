@@ -51,6 +51,9 @@ public class MiniGame2UI : MonoBehaviour {
     [SerializeField] private Transform arrowPointer;
     [SerializeField] private Transform arrowPointerSpawnPoint;
     [SerializeField] private float distanceToMovePointer;
+    [SerializeField] private AudioSource clickSound;
+    [SerializeField] private AudioSource wooshSound;
+    [SerializeField] private AudioSource gameEndSound;
 
     #region Start and Update
     private void Start()
@@ -121,6 +124,7 @@ public class MiniGame2UI : MonoBehaviour {
     // spawns a random acronym from the list of acronyms
     public void SpawnAcronym()
     {
+        wooshSound.Play();
         // sets a value to a random number from 0 to the range of the array of gameobjects
         int randNum = Random.Range(0, acronyms.Count);
         // count to determine what run of the array it is on
@@ -193,7 +197,7 @@ public class MiniGame2UI : MonoBehaviour {
 
     private void GameEnd()
     {
-
+        gameEndSound.Play();
         repPointsText.text = repPoints.ToString();
         lettersIncorrectText.text = lettersIncorrect.ToString();
 
@@ -365,6 +369,7 @@ public class MiniGame2UI : MonoBehaviour {
     // evaluates just one answer
     private void Check(string response)
     {
+        clickSound.Play();
         if (inputField.text == response)
         {
             // add points
@@ -394,6 +399,7 @@ public class MiniGame2UI : MonoBehaviour {
     // last check for one answer - does extra stuff Check() doesn't
     private void CheckFinal(string response, string ID)
     {
+        clickSound.Play();
         if (inputField.text == response)
         {
             // add points

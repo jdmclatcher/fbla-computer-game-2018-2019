@@ -124,19 +124,6 @@ public class MiniGame1UI : MonoBehaviour {
         PlayerPrefs.SetInt("Rep Points", PlayerPrefs.GetInt("Rep Points") + repPoints);
     }
 
-    //// function that ends the game when all the correct items have been selected
-    //private void EndGame()
-    //{
-    //    Debug.Log("You've been game ended.");
-    //    clothes.SetActive(false); // disable the clothes
-    //    // input point values into victory screen text objects
-    //    incorrectNumText.text = incorrectCount.ToString();
-    //    repPointsFinalText.text = repPoints.ToString();
-    //    victoryScreen.SetActive(true); // activate the ending slide/screen
-    //    // adds the total rep points gained to the main rep points playerpref
-    //    PlayerPrefs.SetInt("Rep Points", PlayerPrefs.GetInt("Rep Points") + repPoints);
-    //}
-
     public void ExitAndReturn()
     {
         // loads the main scene
