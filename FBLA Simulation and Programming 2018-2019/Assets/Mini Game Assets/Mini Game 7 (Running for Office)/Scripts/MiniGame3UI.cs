@@ -35,6 +35,7 @@ public class MiniGame3UI : MonoBehaviour {
     [SerializeField] private GameObject countdown;
     [SerializeField] private GameObject curtain;
     [SerializeField] private GameObject bgSpawner;
+    public bool hasStarted = false;
 
     // co-routine that counts down from 3
     IEnumerator _countdown()
@@ -53,6 +54,7 @@ public class MiniGame3UI : MonoBehaviour {
         countdownText.text = "GO!";
         yield return new WaitForSeconds(0.9f);
         player.canRun();
+        hasStarted = true;
         countdown.gameObject.SetActive(false); // stop countdown
         bgSpawner.SetActive(true);
         SpawnObject();

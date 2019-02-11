@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23674581449133148}
   - component: {fileID: 114166052058936918}
   - component: {fileID: 54022394643752450}
+  - component: {fileID: 65957395191005060}
   m_Layer: 0
   m_Name: building3 lblue
   m_TagString: Untagged
@@ -38,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1495481891663006}
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: 125.19, y: 0.62, z: 7.55}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -100,6 +101,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65957395191005060
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1495481891663006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16, y: 16, z: 4.416856}
+  m_Center: {x: 0, y: 0, z: 2.208428}
 --- !u!114 &114166052058936918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,4 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3782e5271f9a49a47a2e27b7f89fb5c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 4

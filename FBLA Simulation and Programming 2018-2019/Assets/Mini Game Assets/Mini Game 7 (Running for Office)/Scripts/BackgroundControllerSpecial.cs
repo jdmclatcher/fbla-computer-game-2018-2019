@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class BackgroundController : MonoBehaviour {
+public class BackgroundControllerSpecial : MonoBehaviour {
 
     // moves indefinetly until collides with the background destroyer object
 
@@ -15,11 +15,10 @@ public class BackgroundController : MonoBehaviour {
 
     private void Update()
     {
-        
         // move the object at constant speed
         if (ui.hasStarted)
         {
-            transform.Translate(0, -moveSpeed * Time.deltaTime, 0);
+            transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
         }
     }
 
