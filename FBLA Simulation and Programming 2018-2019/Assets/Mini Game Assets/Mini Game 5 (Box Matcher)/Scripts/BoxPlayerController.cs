@@ -26,10 +26,30 @@ public class BoxPlayerController : MonoBehaviour {
             if (Mathf.Abs(calculateXMovement()) > 0 || Mathf.Abs(calculateZMovement()) > 0)
             {
                 animator.SetBool("walking", true);
-            } else
+            }
+            else
             {
                 animator.SetBool("walking", false);
             }
+
+            //if (calculateXMovement() > 0)
+            //{
+            //    transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
+            //} 
+            //if(calculateXMovement() < 0)
+            //{
+            //    transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 180, transform.eulerAngles.z);
+            //}
+            //if(calculateZMovement() > 0)
+            //{
+            //    transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 90, transform.eulerAngles.z);
+            //}
+            //if (calculateZMovement() < 0)
+            //{
+            //    transform.rotation = Quaternion.Euler(transform.eulerAngles.x, -90, transform.eulerAngles.z);
+            //}
+
+
         }
 
     }
@@ -39,11 +59,19 @@ public class BoxPlayerController : MonoBehaviour {
     // pushing animation
     private void OnCollisionEnter(Collision collision)
     {
+        if(collision.gameObject.tag == "Wall")
+        {
+            return;
+        }
         animator.SetBool("pushing", true);
     }
 
     private void OnCollisionExit(Collision collision)
     {
+        if (collision.gameObject.tag == "Wall")
+        {
+            return;
+        }
         animator.SetBool("pushing", false);
     }
 
