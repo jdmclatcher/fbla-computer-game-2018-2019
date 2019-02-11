@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4122137850075310}
   - component: {fileID: 33665486975843736}
   - component: {fileID: 23370715762909030}
-  - component: {fileID: 114717988758790192}
   - component: {fileID: 54490076419906898}
   - component: {fileID: 65708483989666986}
+  - component: {fileID: 114138989246652226}
   m_Layer: 0
   m_Name: building4 pink
   m_TagString: Untagged
@@ -37,13 +37,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1331879080553274}
-  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 124.5, y: 0.6, z: 7.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &23370715762909030
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -113,7 +113,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 16, y: 16, z: 9.342842}
   m_Center: {x: 0, y: 0, z: 4.671421}
---- !u!114 &114717988758790192
+--- !u!114 &114138989246652226
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1331879080553274}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3782e5271f9a49a47a2e27b7f89fb5c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c6f653cc6e0f574dbd09a81a9e4e30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 3.5

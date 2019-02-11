@@ -13,12 +13,10 @@ STAGE 2
 
 
 
-add chairs into mini game 2
-
 fix running animation in running for office
 
-fix rotation in box matcher
+add RC box mover instead of player in box matcher
 
-
+add sound!
 
 BUGS:

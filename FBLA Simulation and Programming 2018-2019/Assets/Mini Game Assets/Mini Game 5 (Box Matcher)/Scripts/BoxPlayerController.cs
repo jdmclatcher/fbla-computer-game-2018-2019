@@ -9,6 +9,8 @@ public class BoxPlayerController : MonoBehaviour {
 
     public Animator animator;
 
+    // the player will be a box moving device - remote controlled
+
     #region Start and Update
     private void Start()
     {
@@ -32,10 +34,14 @@ public class BoxPlayerController : MonoBehaviour {
                 animator.SetBool("walking", false);
             }
 
-            // TODO fix player rotation in this game
+
+            
+
+
         }
 
     }
+
 
     #endregion
 
