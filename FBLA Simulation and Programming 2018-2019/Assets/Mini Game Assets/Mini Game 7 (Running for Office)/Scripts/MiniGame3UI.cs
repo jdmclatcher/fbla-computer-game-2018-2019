@@ -219,7 +219,7 @@ public class MiniGame3UI : MonoBehaviour {
         if (questionsSeen == questions.Length)
         {
             obstacleSpawningStopped = true; // stops the flow of the obstacles
-            Instantiate(finishLine, finishLineSpawnPoint.position, finishLineSpawnPoint.rotation, finishLineSpawnPoint);
+            Instantiate(finishLine, finishLineSpawnPoint.position, finishLineSpawnPoint.transform.rotation, finishLineSpawnPoint);
         }
     }
     

@@ -17,7 +17,7 @@ public class FinishLineController : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         // move the object at constant speed
-        transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
+        transform.Translate(0, 0, -moveSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)

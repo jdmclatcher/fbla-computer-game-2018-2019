@@ -30844,7 +30844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8b6f1819226d3438bb8ec505a328d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 1.5
   speedHindranceMultiplier: 2
   mouseLookSensitivity: 40
   restrained: 0
@@ -33511,7 +33511,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 529756674}
-  - {fileID: 2032879724}
+  - {fileID: 2021753019}
   m_Father: {fileID: 504890287}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 270, y: 90, z: 0}
@@ -36720,7 +36720,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 899248155}
-  - {fileID: 2021753019}
+  - {fileID: 2032879724}
   m_Father: {fileID: 504890287}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 270, y: 90, z: 180}
@@ -37510,16 +37510,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2021753018}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.7980001}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.7979998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1978297959}
+  m_Father: {fileID: 1800872586}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 90, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.188, y: -4.881}
+  m_AnchoredPosition: {x: -0.06800008, y: 0.8760002}
   m_SizeDelta: {x: 1.2311, y: 0.5975}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2021753020
@@ -37541,7 +37541,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: ALL or NOTHING
+  m_text: Matching Mania
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -37611,8 +37611,8 @@ MonoBehaviour:
     textComponent: {fileID: 2021753020}
     characterCount: 14
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 2
     pageCount: 1
@@ -37910,16 +37910,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2032879723}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.79799986}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.7979998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1800872586}
+  m_Father: {fileID: 1978297959}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 270, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.0939999, y: -4.891}
+  m_AnchoredPosition: {x: 0.026000023, y: 0.886}
   m_SizeDelta: {x: 1.2311, y: 0.5975}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2032879725
@@ -37941,7 +37941,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Matching Mania
+  m_text: All or NOTHING
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -38011,8 +38011,8 @@ MonoBehaviour:
     textComponent: {fileID: 2032879725}
     characterCount: 14
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 2
     pageCount: 1
