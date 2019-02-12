@@ -11,7 +11,7 @@ public class MiniGame3Player : MonoBehaviour {
     private void Start()
     {
         animator = GetComponent<Animator>();
-        animator.speed = 4f;
+        animator.speed = 2f;
     }
 
     private void OnTriggerEnter(Collider other)
