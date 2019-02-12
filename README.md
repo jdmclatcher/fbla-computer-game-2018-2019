@@ -18,7 +18,7 @@ Download the project and the playable game will be located in the folder titled 
 
 You will spawn into a convention center surrounded by booths with exciting mini games to play!
 
-Use the "WASD" keys to move and look around using the Mouse or Arrow Keys.
+Use the "WASD" keys to move and look around by using the Mouse.
 
 Walk up to each booth to play a mini game. Obtain Rep Points by playing and completing these mini games. 
 Obtaining Rep Points will gain you Supporters.       
