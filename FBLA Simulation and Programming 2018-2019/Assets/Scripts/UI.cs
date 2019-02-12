@@ -49,6 +49,11 @@ public class UI : MonoBehaviour {
         {
             PauseGame();
         }
+        if (miniGameUI.activeInHierarchy)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     #endregion
@@ -59,6 +64,11 @@ public class UI : MonoBehaviour {
         // do stuff based on if game is paused or not
         if (isPaused)
         {
+            if (miniGameUI.activeInHierarchy)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
             // PlayerPrefs.SetInt("Sens", (int) pausedSensSlider.value); // set sens to slider value
             // thePlayer.UpdateSens();
             Cursor.lockState = CursorLockMode.Locked;
@@ -68,6 +78,11 @@ public class UI : MonoBehaviour {
             isPaused = false;
         } else
         {
+            if (miniGameUI.activeInHierarchy)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
             // PlayerPrefs.SetInt("Sens", (int) pausedSensSlider.value); // set sens to slider value
             // thePlayer.UpdateSens();
             Cursor.lockState = CursorLockMode.None;

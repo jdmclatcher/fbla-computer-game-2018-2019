@@ -118,6 +118,8 @@ public class MiniGame4UI : MonoBehaviour {
     [SerializeField] private Button[] buttons;
     [SerializeField] private GameObject timer;
     [SerializeField] private AudioSource applause;
+    [SerializeField] private AudioSource right;
+    [SerializeField] private AudioSource wrong;
 
     private bool correct;
     private bool hasAnswered = false;
@@ -126,6 +128,7 @@ public class MiniGame4UI : MonoBehaviour {
 
     public void InCorrectAnswer(Button button)
     {
+        wrong.Play();
         button.GetComponent<Image>().color = Color.red;
         Debug.Log("Oops. That's not the correct answer.");
         timer.SetActive(false);
@@ -136,6 +139,7 @@ public class MiniGame4UI : MonoBehaviour {
 
     public void CorrectAnswer(Button button)
     {
+        right.Play();
         button.GetComponent<Image>().color = Color.green;
         Debug.Log("Congrats! You got it correct!");
         timer.SetActive(false);

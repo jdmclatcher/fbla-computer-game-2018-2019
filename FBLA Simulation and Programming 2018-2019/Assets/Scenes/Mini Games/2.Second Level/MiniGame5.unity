@@ -5178,7 +5178,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 60516f7426f5d18428686a880dc7026c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5957,7 +5957,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 75be3f0716a65794097aad08526afd83, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -13397,7 +13397,7 @@ MonoBehaviour:
   curtain: {fileID: 289719431}
   thePlayer: {fileID: 314602187}
   totalBoxes: 8
-  startingRepPoints: 300
+  startingRepPoints: 600
   pointsLostPerSecond: 2
   goodSound: {fileID: 748557212}
   badSound: {fileID: 841761188}

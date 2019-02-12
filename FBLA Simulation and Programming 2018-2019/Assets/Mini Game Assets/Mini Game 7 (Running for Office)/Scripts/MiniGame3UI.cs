@@ -225,11 +225,11 @@ public class MiniGame3UI : MonoBehaviour {
     
     public void HitObstacle(GameObject theObstacle)
     {
-        badSound.Play();
-
+       
         Debug.Log(correct);
         if (!correct)
         {
+            badSound.Play();
             Instantiate(obstacleExplodeEffectRED, theObstacle.transform.position, theObstacle.transform.rotation);
             IncorrectAnswer(); // call incorrect asnwer to deduct points
             hasChosen = false; // reset bool

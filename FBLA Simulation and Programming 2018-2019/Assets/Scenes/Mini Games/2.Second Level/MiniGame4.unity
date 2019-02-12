@@ -1482,7 +1482,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 098f32ebedf2e2343bdea7d24b0cb542, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.05
+  m_Volume: 0.01
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1804,8 +1804,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.811776, y: 0.89543056, z: 0.2}
-  m_Center: {x: 0.01045689, y: -0.052284718, z: 0}
+  m_Size: {x: 0.811776, y: 0.89543056, z: 1.6517717}
+  m_Center: {x: 0.01045689, y: -0.05228471, z: 0.35664275}
 --- !u!54 &713914942
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3537,7 +3537,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1734efb8f334e5747b5b5dc16fa55e5c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4860,8 +4860,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 1, z: 0.2}
-  m_Center: {x: -0.000000007450581, y: -0.00000023841858, z: 0}
+  m_Size: {x: 1.1819161, y: 1, z: 0.70667684}
+  m_Center: {x: -0.028451536, y: -0.00000023283063, z: 0.07002592}
 --- !u!114 &2103237427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4949,6 +4949,7 @@ MonoBehaviour:
   objectsLength: 0
   getRight: {fileID: 422305023}
   getWrong: {fileID: 590976396}
+  endGameSound: {fileID: 1591077573}
   livesCounter: {fileID: 2136111623}
   repPointsText: {fileID: 26088149}
   gameEndScreen: {fileID: 1284192517}

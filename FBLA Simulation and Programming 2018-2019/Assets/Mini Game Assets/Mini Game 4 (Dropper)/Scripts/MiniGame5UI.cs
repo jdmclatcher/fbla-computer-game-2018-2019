@@ -68,7 +68,6 @@ public class MiniGame5UI : MonoBehaviour
     [HideInInspector] public int objectsLength;
     [SerializeField] private AudioSource getRight;
     [SerializeField] private AudioSource getWrong;
-    [SerializeField] private AudioSource endGameSound;
     private int repPoints;
 
     [Header("UI")]
@@ -108,6 +107,11 @@ public class MiniGame5UI : MonoBehaviour
             // update error count
             errorCount++;
         }
+        // then check if used all errors
+        if(errorCount == maxErrors)
+        {
+            EndGame();
+        }
         // update lives count based on errors had 
         livesCounter.text = (maxErrors - errorCount).ToString();
 
@@ -121,7 +125,6 @@ public class MiniGame5UI : MonoBehaviour
 
     private void EndGame()
     {
-        endGameSound.Play();
         Debug.Log("Game Over.");
         spawner.SetActive(false); // stop spawning
         thePlayer.canMove = false;
