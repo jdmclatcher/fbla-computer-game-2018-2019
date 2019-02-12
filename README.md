@@ -12,7 +12,7 @@ You can view it here on the Unity Asset Store: https://assetstore.unity.com/pack
 
 ## Instructions for Opening/Playing the Game
 
-Download the project or just the Folder titled "MINIGAMEMANIA_JOHNSCREEK.zip" in the git repository and unzip the folder. Click on the ".exe" to run and play the game.
+Download the project and the playable game will be located in the folder titled "MINIGAMEMANIA_JOHNSCREEK". Click on the ".exe" inside that folder to run and play the game.
 
 ## How To Play
 
