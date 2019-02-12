@@ -53,7 +53,6 @@ public class MiniGame2UI : MonoBehaviour {
     [SerializeField] private float distanceToMovePointer;
     [SerializeField] private AudioSource clickSound;
     [SerializeField] private AudioSource wooshSound;
-    [SerializeField] private AudioSource gameEndSound;
 
     #region Start and Update
     private void Start()
@@ -197,7 +196,6 @@ public class MiniGame2UI : MonoBehaviour {
 
     private void GameEnd()
     {
-        gameEndSound.Play();
         repPointsText.text = repPoints.ToString();
         lettersIncorrectText.text = lettersIncorrect.ToString();
 

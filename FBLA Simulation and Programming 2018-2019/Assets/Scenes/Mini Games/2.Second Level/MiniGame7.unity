@@ -14523,7 +14523,7 @@ MonoBehaviour:
   - {fileID: 238660847}
   - {fileID: 1015758227}
   - {fileID: 1731176055}
-  finishLine: {fileID: 1998933289330224, guid: 50fccc21c9601bf4eae4f3d5519a3677, type: 2}
+  finishLine: {fileID: 1388591202876448, guid: db725cb5740cba24da2401cdfa73bb1f, type: 2}
   finishLineSpawnPoint: {fileID: 465143265}
   correctText: {fileID: 1684196592}
   gameCompletedScreen: {fileID: 1580033696}
