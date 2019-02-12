@@ -7,16 +7,11 @@ public class BoxPlayerController : MonoBehaviour {
     private float walkX;
     private float walkY;
 
-    public Animator animator;
-
     // the player will be a box moving device - remote controlled
 
     #region Start and Update
-    private void Start()
-    {
-        // get ref to animator
-        animator = GetComponent<Animator>();
-    }
+
+    [HideInInspector] public bool restrained;
 
     private void Update()
     {
@@ -24,58 +19,19 @@ public class BoxPlayerController : MonoBehaviour {
         {
             // perform movement functions
             transform.Translate(calculateXMovement(), 0, calculateZMovement());
-            // check and set walking status accordingly
-            if (Mathf.Abs(calculateXMovement()) > 0 || Mathf.Abs(calculateZMovement()) > 0)
-            {
-                animator.SetBool("walking", true);
-            }
-            else
-            {
-                animator.SetBool("walking", false);
-            }
-
-
-            
-
 
         }
 
     }
-
 
     #endregion
 
-    // pushing animation
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Wall")
-        {
-            return;
-        }
-        animator.SetBool("pushing", true);
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag == "Wall")
-        {
-            return;
-        }
-        animator.SetBool("pushing", false);
-    }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        if (!collision.gameObject.activeInHierarchy)
-        {
-            animator.SetBool("pushing", false);
-        }
-    }
+    
 
     #region Movement
     [SerializeField] private float verticalMoveSpeed;
     [SerializeField] private float horizontalMoveSpeed;
-    [HideInInspector] public bool restrained;
+    
 
     private float calculateZMovement()
     {
