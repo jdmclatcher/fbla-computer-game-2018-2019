@@ -268,7 +268,9 @@ public class UI : MonoBehaviour {
             slider.minValue += repPointsBoundsInc;
             slider.maxValue += repPointsBoundsInc;
 
-            SetSliderBounds(); // recursive call to keep increasing, until slider max value exceeds rep points
+            // recursive call to keep increasing
+            // until slider max value exceeds rep points
+            SetSliderBounds(); 
         }
 
         // set slider val to number of rep points 
