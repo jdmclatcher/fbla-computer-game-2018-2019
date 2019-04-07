@@ -169,9 +169,11 @@ public class Player : MonoBehaviour {
     #endregion
 
     #region Collision
-
     private void OnTriggerEnter(Collider other)
     {
+
+        // TODO fix trigger entering bug
+
 
         // switch statement that will validate each mini game number
         // and proceed accordingly
