@@ -1,0 +1,11 @@
+﻿TODO --
+
+
+
+
+
+BUGS --
+
+first time player loads in the game, cannot collide in the box trigger unless he exits the trigger then re-enters
+
+
