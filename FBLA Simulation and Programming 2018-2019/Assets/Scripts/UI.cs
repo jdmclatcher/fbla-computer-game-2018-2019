@@ -7,10 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour {
 
-    
     [SerializeField] private TextMeshProUGUI supportersText;
-
-    
 
     [SerializeField] private GameObject pauseUI;
     private bool isPaused; // check if game is paused or not
@@ -40,6 +37,8 @@ public class UI : MonoBehaviour {
         repPointsText.text = repPoints.ToString();
 
         SetSliderBounds();
+
+        SetMiniGameTitles(); // gray out the games the player has already played
         
     }
 
@@ -57,57 +56,6 @@ public class UI : MonoBehaviour {
     }
 
     #endregion
-
-    private void PauseGame()
-    {
-        pausedSensSlider.value = PlayerPrefs.GetInt("Sens"); // set val of slider
-        // do stuff based on if game is paused or not
-        if (isPaused)
-        {
-            if (miniGameUI.activeInHierarchy)
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
-            // PlayerPrefs.SetInt("Sens", (int) pausedSensSlider.value); // set sens to slider value
-            // thePlayer.UpdateSens();
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            Time.timeScale = 1f;
-            pauseUI.SetActive(false);
-            isPaused = false;
-        } else
-        {
-            if (miniGameUI.activeInHierarchy)
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
-            // PlayerPrefs.SetInt("Sens", (int) pausedSensSlider.value); // set sens to slider value
-            // thePlayer.UpdateSens();
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            Time.timeScale = 0f;
-            pauseUI.SetActive(true);
-            isPaused = true;
-        }
-        
-    }
-
-    // when changed
-    public void OnSensSliderChange()
-    {
-        PlayerPrefs.SetInt("Sens", (int)pausedSensSlider.value); // set sens to slider value
-        thePlayer.UpdateSens(); // then update sens
-    }
-
-    public void QuitGame()
-    {
-        PlayerPrefs.SetInt("Sens", (int)slider.value); // set sens to slider value
-        Time.timeScale = 1f; // resume normal time
-        // Application.Quit(); // TEMP
-        SceneManager.LoadScene("Title"); // go back to title screen
-    }
 
     #region Mini-Game
 
@@ -139,6 +87,24 @@ public class UI : MonoBehaviour {
     [Header("Extras")]
     [SerializeField] private GameObject miniGameItemsUI; // for anims
     public GameObject alreadyPlayedWarning;
+
+    public List<GameObject> miniGameTitles;
+    // run at start
+    private void SetMiniGameTitles()
+    {
+        // loop through each mini game and check if its been played
+        // then set text color accordingly
+        for (int i = 0; i < miniGames.Count; i++)
+        {
+            if (CheckPlayed(i))
+            {
+                // update corresponding text color to grey
+                // -1 for the offset in CheckPlayer() function
+                miniGameTitles[i - 1].GetComponent<TextMeshPro>().color = Color.grey;
+            }
+        }
+
+    }
 
     public void ShowMiniGameUI()
     {
@@ -288,9 +254,16 @@ public class UI : MonoBehaviour {
         PlayerPrefs.SetInt("Supporters", supporters);
     }
 
+    // when changed
+    public void OnSensSliderChange()
+    {
+        PlayerPrefs.SetInt("Sens", (int)pausedSensSlider.value); // set sens to slider value
+        thePlayer.UpdateSens(); // then update sens
+    }
+
     #endregion
 
-    #region Game End/Victory
+    #region Game Management/Victory
 
     [Header("Victory")]
     [SerializeField] private Camera mainCamera;
@@ -334,6 +307,51 @@ public class UI : MonoBehaviour {
         mainCamera.GetComponent<AudioListener>().enabled = true;
         endingCamera.enabled = false;
         endingCamera.GetComponent<AudioListener>().enabled = false;
+
+    }
+
+    public void QuitGame()
+    {
+        PlayerPrefs.SetInt("Sens", (int)slider.value); // set sens to slider value
+        Time.timeScale = 1f; // resume normal time
+        // Application.Quit(); // TEMP
+        SceneManager.LoadScene("Title"); // go back to title screen
+    }
+
+    private void PauseGame()
+    {
+        pausedSensSlider.value = PlayerPrefs.GetInt("Sens"); // set val of slider
+        // do stuff based on if game is paused or not
+        if (isPaused)
+        {
+            if (miniGameUI.activeInHierarchy)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            // PlayerPrefs.SetInt("Sens", (int) pausedSensSlider.value); // set sens to slider value
+            // thePlayer.UpdateSens();
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            Time.timeScale = 1f;
+            pauseUI.SetActive(false);
+            isPaused = false;
+        }
+        else
+        {
+            if (miniGameUI.activeInHierarchy)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            // PlayerPrefs.SetInt("Sens", (int) pausedSensSlider.value); // set sens to slider value
+            // thePlayer.UpdateSens();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Time.timeScale = 0f;
+            pauseUI.SetActive(true);
+            isPaused = true;
+        }
 
     }
 

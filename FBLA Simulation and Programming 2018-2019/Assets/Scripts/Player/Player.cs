@@ -86,6 +86,7 @@ public class Player : MonoBehaviour {
 
             // set first time to true (1)
             PlayerPrefs.SetInt("First Time", 1);
+            respawnInvincible = false;
         }
         else
         {

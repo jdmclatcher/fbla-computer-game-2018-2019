@@ -6271,7 +6271,7 @@ GameObject:
   - component: {fileID: 318391536}
   - component: {fileID: 318391535}
   m_Layer: 0
-  m_Name: TextMeshPro
+  m_Name: prof dresser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8943,7 +8943,7 @@ GameObject:
   - component: {fileID: 490893323}
   - component: {fileID: 490893322}
   m_Layer: 0
-  m_Name: TextMeshPro (2)
+  m_Name: acronym attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12126,7 +12126,7 @@ GameObject:
   - component: {fileID: 710954885}
   - component: {fileID: 710954884}
   m_Layer: 0
-  m_Name: TextMeshPro (3)
+  m_Name: box matcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14877,7 +14877,7 @@ GameObject:
   - component: {fileID: 862723336}
   - component: {fileID: 862723335}
   m_Layer: 0
-  m_Name: TextMeshPro (1)
+  m_Name: dropper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28676,6 +28676,14 @@ MonoBehaviour:
   pausedSensSlider: {fileID: 437974988}
   clickSound: {fileID: 584298924}
   freeToMove: 0
+  miniGameTitles:
+  - {fileID: 318391533}
+  - {fileID: 2032879723}
+  - {fileID: 2021753018}
+  - {fileID: 862723333}
+  - {fileID: 710954882}
+  - {fileID: 490893320}
+  - {fileID: 1799848176}
   miniGameUI: {fileID: 1110238138}
   miniGames:
   - {fileID: 2074961850}
@@ -30886,10 +30894,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.6773827
+  m_Radius: 1.1276917
   m_Height: 8.223409
   m_Direction: 1
-  m_Center: {x: -0.30447325, y: -0.7945504, z: 0}
+  m_Center: {x: -0.30447325, y: -0.7945504, z: 0.5496909}
 --- !u!1 &1654774052
 GameObject:
   m_ObjectHideFlags: 0
@@ -33224,7 +33232,7 @@ GameObject:
   - component: {fileID: 1799848179}
   - component: {fileID: 1799848178}
   m_Layer: 0
-  m_Name: TextMeshPro (4)
+  m_Name: running for office
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35968,7 +35976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c336fd27a21abf4cade96f2af22a6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWait: 2
+  timeToWait: 0.75
   sceneToLoad: 
 --- !u!111 &1937303599
 Animation:
@@ -37498,7 +37506,7 @@ GameObject:
   - component: {fileID: 2021753021}
   - component: {fileID: 2021753020}
   m_Layer: 0
-  m_Name: TextMeshPro (1)
+  m_Name: matching mania
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37898,7 +37906,7 @@ GameObject:
   - component: {fileID: 2032879726}
   - component: {fileID: 2032879725}
   m_Layer: 0
-  m_Name: TextMeshPro (2)
+  m_Name: all or nothing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
