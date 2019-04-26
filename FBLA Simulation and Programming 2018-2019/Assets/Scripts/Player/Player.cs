@@ -3,6 +3,10 @@ using System.Collections;
 // using System.Collections.Generic;
 using UnityEngine;
 
+// TODO - add triggers to new worlds
+//         get rest of models
+
+
 public class Player : MonoBehaviour {
     
     [Header("Movement")]
