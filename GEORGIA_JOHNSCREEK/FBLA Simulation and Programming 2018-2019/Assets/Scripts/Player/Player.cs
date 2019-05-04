@@ -48,7 +48,7 @@ public class Player : MonoBehaviour {
     #region Start and Update
 
     // Use this for initialization
-    void Start()
+    public void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         CheckPlayed();
@@ -58,9 +58,7 @@ public class Player : MonoBehaviour {
 
         mouseLookSensitivity = PlayerPrefs.GetInt("Sens"); // calculate sensitivity
 
-        // enable both walls
-        wall1.SetActive(true);
-        wall2.SetActive(true);
+        
 
         Cursor.visible = false;
         restrained = false;
@@ -100,10 +98,13 @@ public class Player : MonoBehaviour {
             respawnInvincible = true;
         }
 
-        PlayerPrefs.SetInt("Sens", 40); // set sens to half at start
+        PlayerPrefs.SetInt("Sens", 30); // set sens to half at start
         UpdateSens();
 
-
+        // TODO - need new doors!!
+        // enable both walls
+        wall1.SetActive(true);
+        wall2.SetActive(true);
     }
 
     // Update is called once per frame

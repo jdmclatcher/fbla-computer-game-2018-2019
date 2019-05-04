@@ -20,6 +20,7 @@ public class UI : MonoBehaviour {
     #region Start and Update
     private void Start()
     {
+
         freeToMove = false;
         fadeToBlack.SetActive(false);
         // setup cameras

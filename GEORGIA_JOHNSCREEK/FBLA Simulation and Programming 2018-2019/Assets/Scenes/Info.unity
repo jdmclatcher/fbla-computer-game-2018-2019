@@ -669,7 +669,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 181.8, y: -29.7}
+  m_AnchoredPosition: {x: 191, y: -29.7}
   m_SizeDelta: {x: 191.3, y: 64.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &602445101
@@ -908,11 +908,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "You will spawn into a convention center surrounded by booths with exciting
+  m_text: "You will spawn into a convention center surrounded by rooms with exciting
     mini games to play!\n\nUse the \"WASD\" keys to move and look around by using
-    the Mouse.\n\nWalk up to each booth to play a mini game. \nObtain                      by
-    playing and completing these mini games. \nObtaining                      will
-    gain you                      .       \n\nOnce you have played all the mini games
+    the Mouse.\n\nWalk into each room to play each mini game. \nObtain                      by
+    playing and completing these mini games. \nObtaining                     will
+    gain you                    .       \n\nOnce you have played all the mini games
     in the level, move on to the next level. When you complete all of the mini games,
     move on to the final room where a surprise will be waiting. Good Luck! "
   m_isRightToLeft: 0
@@ -982,10 +982,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 682517062}
-    characterCount: 547
+    characterCount: 544
     spriteCount: 0
-    spaceCount: 166
-    wordCount: 90
+    spaceCount: 162
+    wordCount: 89
     linkCount: 0
     lineCount: 12
     pageCount: 1
