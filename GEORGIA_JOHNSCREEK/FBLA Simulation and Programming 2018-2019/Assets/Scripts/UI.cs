@@ -277,7 +277,7 @@ public class UI : MonoBehaviour {
     {
         // wall opening animation
         Animation wallAnim = wall.GetComponent<Animation>();
-        wallAnim.Play("Wall Open");
+        wallAnim.Play("Door Open");
 
         wall.gameObject.GetComponent<BoxCollider>().enabled = false; // disable box trigger
 

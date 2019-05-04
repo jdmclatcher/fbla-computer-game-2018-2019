@@ -28676,14 +28676,6 @@ MonoBehaviour:
   pausedSensSlider: {fileID: 437974988}
   clickSound: {fileID: 584298924}
   freeToMove: 0
-  miniGameTitles:
-  - {fileID: 318391533}
-  - {fileID: 2032879723}
-  - {fileID: 2021753018}
-  - {fileID: 862723333}
-  - {fileID: 710954882}
-  - {fileID: 490893320}
-  - {fileID: 1799848176}
   miniGameUI: {fileID: 1110238138}
   miniGames:
   - {fileID: 2074961850}
@@ -28702,6 +28694,14 @@ MonoBehaviour:
   miniGameItemsUI: {fileID: 661411388}
   alreadyPlayedWarning: {fileID: 1657269565729234, guid: a0e8a27ca9e222f4d8661cb47a1b6db5,
     type: 2}
+  miniGameTitles:
+  - {fileID: 318391533}
+  - {fileID: 2032879723}
+  - {fileID: 2021753018}
+  - {fileID: 862723333}
+  - {fileID: 710954882}
+  - {fileID: 490893320}
+  - {fileID: 1799848176}
   slider: {fileID: 1522486850}
   repPointsBoundsInc: 300
   minVal: {fileID: 438195128}
