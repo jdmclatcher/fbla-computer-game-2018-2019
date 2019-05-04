@@ -12,7 +12,7 @@ You can view it here on the Unity Asset Store: https://assetstore.unity.com/pack
 
 ## Instructions for Opening/Playing the Game
 
-Download the project and the playable game will be located in the folder titled "MINIGAMEMANIA_JOHNSCREEK". Click on the ".exe" inside that folder to run and play the game.
+Download the project and simply double-click on the shortcut called "FBLA Mini Game Mania" to play the game. All of the source code and other project files are located inside the main folder ("GEORGIA_JOHNSCREEK") in a sub-folder called "FBLA Simulation and Programming 2018-2019"
 
 ## How To Play
 
