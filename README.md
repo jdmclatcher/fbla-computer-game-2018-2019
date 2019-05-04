@@ -16,14 +16,14 @@ Download the project and the playable game will be located in the folder titled 
 
 ## How To Play
 
-You will spawn into a convention center surrounded by booths with exciting mini games to play!
+You will spawn into a convention center surrounded by rooms with exciting mini games to play!
 
 Use the "WASD" keys to move and look around by using the Mouse.
 
-Walk up to each booth to play a mini game. Obtain Rep Points by playing and completing these mini games. 
+Walk up the booth in each room to play a mini game. Obtain Rep Points by playing and completing these mini games. 
 Obtaining Rep Points will gain you Supporters.       
 
-Once you have played all the mini games in the level, move on to the next level by walking up to the curtain. When you complete all of the mini games, move on to the final room where a surprise will be waiting. Good Luck! 
+Once you have played all the mini games in the level, move on to the next level by walking up to the closed door. When you complete all of the mini games, move on to the final room where a surprise will be waiting. Good Luck! 
 
 ## Extra Notes
 
@@ -33,4 +33,4 @@ There is a Sensitivity Slider that will change the mouse look sensitivity if you
 
 ### A game by Jonathan McLatcher (code, UI, and Unity) and Dhruv Kulkarni (models and animations).
 
-### Created using Unity, Visual Studio Community, and Blender
+### Created using Unity, Visual Studio Community, Blender, and Aseprite
