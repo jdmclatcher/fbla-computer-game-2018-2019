@@ -129,21 +129,22 @@ public class Player : MonoBehaviour {
                 animator.SetBool("walking", false);
             }
 
-            // set rotation anims accordingly
-            if(calculateRotation() > 0)
-            {
-                animator.SetBool("turning R", true);
-            } else
-            {
-                animator.SetBool("turning R", false);
-            }
-            if (calculateRotation() < 0)
-            {
-                animator.SetBool("turning L", true);
-            } else
-            {
-                animator.SetBool("turning L", false);
-            }
+            
+            //// set rotation anims accordingly
+            //if(calculateRotation() > 0)
+            //{
+            //    animator.SetBool("turning R", true);
+            //} else
+            //{
+            //    animator.SetBool("turning R", false);
+            //}
+            //if (calculateRotation() < 0)
+            //{
+            //    animator.SetBool("turning L", true);
+            //} else
+            //{
+            //    animator.SetBool("turning L", false);
+            //}
         }
 
         

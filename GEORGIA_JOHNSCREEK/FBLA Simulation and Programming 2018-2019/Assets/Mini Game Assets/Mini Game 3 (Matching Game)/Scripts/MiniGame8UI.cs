@@ -145,6 +145,7 @@ public class MiniGame8UI : MonoBehaviour {
         numberMissedText.text = numberIncorrect.ToString();
         repPointText.text = repPoints.ToString();
         gameEndScreen.SetActive(true); // set the end screen active
+
         PlayerPrefs.SetInt("Rep Points", PlayerPrefs.GetInt("Rep Points") + repPoints); // add to rep points
     }
 

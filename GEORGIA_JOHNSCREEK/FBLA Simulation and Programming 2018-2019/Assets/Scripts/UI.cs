@@ -95,8 +95,9 @@ public class UI : MonoBehaviour {
     {
         // loop through each mini game and check if its been played
         // then set text color accordingly
-        for (int i = 0; i < miniGames.Count; i++)
+        for (int i = 1; i < miniGames.Count + 1; i++)
         {
+            // Debug.Log(miniGameTitles[i - 1] + " = " + CheckPlayed(i));
             if (CheckPlayed(i))
             {
                 // update corresponding text color to grey
