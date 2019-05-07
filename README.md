@@ -10,7 +10,7 @@ All assets were 100% made from scratch. All the animations, models, UI component
 The only asset pack used was "SimpleUIElements". The pack was used for basic UI starter backgrounds and images.
 You can view it here on the Unity Asset Store: https://assetstore.unity.com/packages/2d/gui/icons/simple-ui-elements-53276 
 
-## Instructions for Opening/Playing the Game
+## Instructions for Opening the Game
 
 Download the project and simply double-click on the shortcut called "FBLA Mini Game Mania" to play the game. All of the source code and other project files are located inside the main folder ("GEORGIA_JOHNSCREEK") in a sub-folder called "FBLA Simulation and Programming 2018-2019"
 
