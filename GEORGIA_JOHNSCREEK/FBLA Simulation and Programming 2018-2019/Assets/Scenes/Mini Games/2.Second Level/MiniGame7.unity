@@ -10284,6 +10284,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4102484040610204, guid: afd31b05b45cdbd45a8b3862764bb174,
     type: 2}
   m_PrefabInternal: {fileID: 1445464253}
+--- !u!1 &1446464542 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100262, guid: 3d14e1ad65de8cf4085c4f797868da61,
+    type: 3}
+  m_PrefabInternal: {fileID: 1531834883}
+--- !u!54 &1446464543
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1446464542}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 124
+  m_CollisionDetection: 0
+--- !u!114 &1446464544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1446464542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567afa7743aea0d479a37617360eb48a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowMoVal: 0.05
+  ui: {fileID: 1818535010}
+--- !u!136 &1446464545
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1446464542}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.1194742
+  m_Height: 7.975561
+  m_Direction: 1
+  m_Center: {x: 1.01942215e-16, y: -0.09462088, z: 0.016690493}
 --- !u!1 &1449873911
 GameObject:
   m_ObjectHideFlags: 0
@@ -11260,6 +11306,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 1d491e830b7c5924b9f74cd052b17323, type: 2}
+    - target: {fileID: 100262, guid: 3d14e1ad65de8cf4085c4f797868da61, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d14e1ad65de8cf4085c4f797868da61, type: 3}
   m_IsPrefabAsset: 0
@@ -14685,7 +14735,7 @@ MonoBehaviour:
   obstacleExplodeEffectGREEN: {fileID: 1367091207846340, guid: 7369ac104156539469415b7e638050a0,
     type: 2}
   questionNumSeen: 00000000000000
-  player: {fileID: 632645062}
+  player: {fileID: 1446464544}
   goodSound: {fileID: 86709652}
   badSound: {fileID: 766994462}
   gameEndSound: {fileID: 747618368}
