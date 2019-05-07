@@ -245,8 +245,8 @@ public class MiniGame2UI : MonoBehaviour {
             case "Acronyms/NLC":
                 Check3("national", "leadership", "conference", "NLC");
                 break;
-            case "Acronyms/EMERGE":
-                Check6("educating", "members", "early", "regarding", "georgia's", "economy", "EMERGE");
+            case "Acronyms/SOT":
+                Check3("state", "officer", "training", "SOT");
                 break;
             case "Acronyms/ML":
                 Check2("middle", "level", "ML");
