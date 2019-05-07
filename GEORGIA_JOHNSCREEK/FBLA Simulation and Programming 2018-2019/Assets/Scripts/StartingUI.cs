@@ -11,6 +11,17 @@ public class StartingUI : MonoBehaviour {
         curtainClose.SetActive(false); // disable by default
     }
 
+    private void Update()
+    {
+        // quit the game on escape key press
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            PlayerPrefs.DeleteAll();
+            Debug.Log("Game was quit.");
+            Application.Quit();
+        }
+    }
+
     public void PlayGame()
     {
         // run routine
@@ -19,6 +30,7 @@ public class StartingUI : MonoBehaviour {
 
     public void QuitGame()
     {
+        PlayerPrefs.DeleteAll();
         Application.Quit();
     }
 
