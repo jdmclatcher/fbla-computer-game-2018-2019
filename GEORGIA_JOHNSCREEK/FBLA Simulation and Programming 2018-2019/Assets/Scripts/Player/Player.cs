@@ -101,7 +101,6 @@ public class Player : MonoBehaviour {
         PlayerPrefs.SetInt("Sens", 30); // set sens to half at start
         UpdateSens();
 
-        // TODO - need new doors!!
         // enable both walls
         wall1.SetActive(true);
         wall2.SetActive(true);
@@ -176,7 +175,6 @@ public class Player : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
 
-        // TODO fix trigger entering bug
 
 
         // switch statement that will validate each mini game number
