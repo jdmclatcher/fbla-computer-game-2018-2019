@@ -335,10 +335,12 @@ ModelImporter:
     2100010: Tux
     2100012: Whiet
     2100014: Pants
+    2100016: Shoe
     4300000: Cube
     7400000: Default Take
     7400002: metarigAction
     7400004: RUN
+    7400006: Walk
     9500000: //RootNode
     13700000: Cube
   externalObjects: {}
