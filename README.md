@@ -14,6 +14,8 @@ You can view it here on the Unity Asset Store: https://assetstore.unity.com/pack
 
 Download the project and simply double-click on the shortcut called "FBLA Mini Game Mania" to play the game. All of the source code and other project files are located inside the main folder ("GEORGIA_JOHNSCREEK") in a sub-folder called "FBLA Simulation and Programming 2018-2019"
 
+It is highly recommended that you use [7-Zip File Manager](https://www.7-zip.org/ "7-Zip File Manager") to extract the .zip folder of this repository. If you do not have 7-Zip, just click "Skip" and "Do this for all current items" if you see any warnings that state that the file path is too long.
+
 ## How To Play
 
 You will spawn into a convention center surrounded by rooms with exciting mini games to play!
