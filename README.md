@@ -1,5 +1,5 @@
 # FBLA Mini Game Mania
-Jonathan McLatcher and Dhruv Kulkarni's submission for the 2019 FBLA-SLC Computer Game and Simulation Programming competition.
+Jonathan McLatcher and Dhruv Kulkarni's submission for the 2019 FBLA-NLC Computer Game and Simulation Programming competition.
 
 ## Preview
 
